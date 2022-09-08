@@ -1,4 +1,5 @@
 <!-- Item wrapper -->
+
 <div
     class="fuse-vertical-navigation-item-wrapper"
     [class.fuse-vertical-navigation-item-has-subtitle]="!!item.subtitle"
@@ -6,6 +7,7 @@
 
     <!-- Item with an internal link -->
     <ng-container *ngIf="item.link && !item.externalLink && !item.function && !item.disabled">
+       
         <a
             class="fuse-vertical-navigation-item"
             [ngClass]="{'fuse-vertical-navigation-item-active-forced': item.active}"

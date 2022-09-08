@@ -5,7 +5,8 @@ export interface Production {
     "RESOURCE": string,
     "ITEM": number,
     "DELIVERY_DATE": string,
-    "STATE": string
+    "STATE": string,
+    "DOCS": Doc[]
 }
 export interface ProductionData {
     production: Production,
@@ -24,4 +25,9 @@ export interface Doc {
 
 export interface DocsList {
     docs: Doc[]
+}
+
+export interface DocsProduction {
+    docs: Doc[],
+    production: Production
 }

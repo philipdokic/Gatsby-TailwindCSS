@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
 import { debounceTime, map, merge, Observable, Subject, switchMap, takeUntil } from 'rxjs';
-import { ProductionService } from '../production.service';
-import { Doc } from '../production.types';
+import { ProductionService } from '../../production.service';
+import { Doc, Production } from '../../production.types';
 
 
 /**
@@ -27,7 +27,8 @@ export class DocsTable implements OnInit, AfterViewInit {
   // @Input()
   // docs$: Doc[]
 
-  docs$: Observable<Doc[]> 
+  // docs$: Observable<Doc[]> 
+  production$: Observable<Production> 
 
   flashMessage: 'success' | 'error' | null = null;
   isLoading: boolean = false;
@@ -53,26 +54,24 @@ export class DocsTable implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
 
   ngAfterViewInit() {
-    console.log("ngAfterViewInit", this.docs$)
-
-    this.dataSource.sort = this.sort;
+    this.dataSource.sort = this.sort
   }
 
 
 
 
   ngOnInit(): void {
-    this.docs$ = this._productionService.docs$
-    this._productionService.docs$
+    this.production$ = this._productionService.production
+    this._productionService.production
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((docs) => {
-                console.log("ON ITIN TABLE DOCS:", docs.docs)
+            .subscribe((production) => {
+                console.log("ON ITIN TABLE DOCS:", production.production)
                 // Store the data
                 // this.docs = docs;
 
                 // Store the table data
-                this.dataSource.data = docs.docs;
-                this.displayedColumns = [...Object.keys(docs.docs[0]).filter( field => field[0] !== "_")]
+                this.dataSource.data = production.production.DOCS;
+                this.displayedColumns = [...Object.keys(production.production.DOCS[0]).filter( field => field[0] !== "_")]
                 // this.dataSource = new MatTableDataSource(docs.docs);
             });
 

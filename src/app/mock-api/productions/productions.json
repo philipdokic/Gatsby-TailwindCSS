@@ -7,7 +7,15 @@
       "RESOURCE": "OC68/7D#1",
       "ITEM": 108122,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "STOPPED"
+      "STATE": "STOPPED",
+      "DOCS": [
+        {
+         "_id":"1"
+       },  
+        {        
+         "_id":"5"         
+       }  
+      ]
     },
     {
       "SERIAL_NO": "S# 000042-MLUW60.6P-32",
@@ -16,7 +24,12 @@
       "RESOURCE": "OC6B.7UW#1",
       "ITEM": 108123,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "PAUSED"
+      "STATE": "PAUSED",
+      "DOCS": [
+        {
+         "_id":"3"
+       }
+      ]
     },
     {
       "SERIAL_NO": "S# 000042-PR60.6P-32",
@@ -25,7 +38,12 @@
       "RESOURCE": "BM80.5R0#2",
       "ITEM": 101970,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "ON"
+      "STATE": "ON",
+      "DOCS": [
+        {
+          "_id":"4"
+        }
+      ]
     },
     {
       "SERIAL_NO": "S# 000042-TERF60.0P-32",
@@ -34,7 +52,15 @@
       "RESOURCE": "WW60.6RC#1",
       "ITEM": 102059,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "ON"
+      "STATE": "ON",
+      "DOCS": [
+        {
+         "_id":"3"
+       },  
+        {        
+         "_id":"4"         
+       }  
+      ]
     },
     {
       "SERIAL_NO": "S# 000042-WEB60.6P-32",
@@ -43,7 +69,10 @@
       "RESOURCE": "FA168.7#1",
       "ITEM": 102039,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "STOPPED"
+      "STATE": "STOPPED",
+      "DOCS": [
+      
+      ]
     },
     {
       "SERIAL_NO": "S# 000043-FLDW60.6P-32",
@@ -52,7 +81,21 @@
       "RESOURCE": "FIEB.7#1",
       "ITEM": 108133,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "STOPPED"
+      "STATE": "STOPPED",
+      "DOCS": [
+        {
+         "_id":"1"
+       },  
+        {        
+         "_id":"2"         
+       },  
+        {
+         "_id":"3"
+       },  
+        {        
+         "_id":"5"         
+       }  
+      ]
     },
     {
       "SERIAL_NO": "S# 000043-FLUW60.6P 32",
@@ -61,7 +104,21 @@
       "RESOURCE": "OC60.7DW#1",
       "ITEM": 105134,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "STOPPED"
+      "STATE": "STOPPED",
+      "DOCS": [
+        {
+          "_id":"1"
+        },  
+         {        
+          "_id":"2"         
+        },  
+         {
+          "_id":"3"
+        },  
+         {        
+          "_id":"5"         
+        }  
+      ]
     },
     {
       "SERIAL_NO": "S# 000043-MLDW60 6P-32",
@@ -70,7 +127,15 @@
       "RESOURCE": "OC68.7UW#1",
       "ITEM": 108122,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "ON"
+      "STATE": "ON",
+      "DOCS": [
+        {
+         "_id":"3"
+       },  
+        {        
+         "_id":"4"         
+       }  
+      ]
     },
     {
       "SERIAL_NO": "S# 000043-MLLW60 6P-32",
@@ -79,7 +144,15 @@
       "RESOURCE": "FA168.7#1",
       "ITEM": 108123,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "ON"
+      "STATE": "ON",
+      "DOCS": [
+        {
+         "_id":"3"
+       },  
+        {        
+         "_id":"4"         
+       }  
+      ]
     }
    
 ]

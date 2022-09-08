@@ -13,12 +13,13 @@ import { Doc, Production } from '../production.types';
 export class DocUploaderComponent implements OnInit, OnDestroy
 {
 
-    @Input()
-    production: Production
+ 
 
 
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
+    private production$: Observable<Production>
+    PROD_ID: string
 
     /**
      * Constructor
@@ -39,7 +40,12 @@ export class DocUploaderComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        
+        this._productionService.production.subscribe( p => {
+
+            console.log("~~~~~SUBSCRIBED PRODUCTION", p)            
+            this.PROD_ID = p.production.PROD_ID
+        }
+        )
     }
 
     /**
@@ -63,7 +69,7 @@ export class DocUploaderComponent implements OnInit, OnDestroy
      * @param note
      * @param fileList
      */
-    uploadFile(production: Production, fileList: FileList): void
+    uploadFile(fileList: FileList): void
     {
 
         console.log("FILE SELECTED", fileList)
@@ -82,7 +88,7 @@ export class DocUploaderComponent implements OnInit, OnDestroy
             return;
         }
 
-        this._productionService.createDocs(fileList).pipe(
+        this._productionService.addDocsToProduction(this.PROD_ID, fileList).pipe(
             map(() => {
                 // Get the note
                 // this.$ = this._notesService.note$;

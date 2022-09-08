@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, tap, of, switchMap, throwError  } from 'rxjs';
-import { Doc, DocsList, Production, ProductionData } from './production.types';
+import { Doc, DocsList, DocsProduction, Production, ProductionData } from './production.types';
 
 @Injectable({
     providedIn: 'root'
@@ -89,7 +89,7 @@ export class ProductionService
         return this._httpClient.get<DocsList>('api/docs').pipe(
             tap((response: DocsList) => {
                 console.log("RESPONSE", response)
-                this._docs.next(response);
+                this._docs.next(response.docs);
             })
         );
     }
@@ -102,6 +102,25 @@ export class ProductionService
                 //     map(() => response)
                 // ))
             )));
+    }
+    addDocsToProduction(PROD_ID: string, fileList: FileList) : Observable<any>
+    {
+        // console.log("++++SERVICE PROD_ID", PROD_ID)    
+        return this._httpClient.put<any>('api/productions/docs', {files: fileList, PROD_ID}).pipe(
+
+            tap((response: DocsProduction) => {
+                console.log("addDocsToProduction RESPONSE", response)
+                this._docs.next({docs: response.docs});
+                this._production.next({production: response.production});
+            })
+            // switchMap((response: DocsProduction) => 
+            // this.getDocs().pipe(
+            //     // switchMap(() => this.getNoteById(response.id).pipe(
+            //     //     map(() => response)
+            //     // ))
+            // )
+            // )
+            );
     }
    
 }
