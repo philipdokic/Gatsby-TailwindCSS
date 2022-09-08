@@ -1,0 +1,25 @@
+<div class="flex flex-col flex-auto min-w-0">
+
+  <!-- Main -->
+  <div class="flex flex-col sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent">
+
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-7 sm:leading-10 truncate">
+        Productions
+    </h2>
+  </div>
+  <div class="flex-auto p-6 sm:p-10">
+      <!-- CONTENT GOES HERE -->
+          <div>
+              <ng-container *ngIf="(productions$ | async).productions as productions">
+                <!-- <table-filtering-example [data] = "productions"></table-filtering-example> -->
+                <productions-table [dataSourceInput] = "productions" ></productions-table>
+              </ng-container>
+          </div>
+         
+
+
+  </div>
+
+</div>
+
+
