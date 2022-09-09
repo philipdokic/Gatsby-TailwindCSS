@@ -1,0 +1,38 @@
+<ng-container *ngIf="(production$ | async).production as production">
+<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+
+  <ng-container *ngFor="let field of displayedColumns" [matColumnDef]="field">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header [sortActionDescription]="'Sort by '+ field" sticky> {{field}}
+    </th>
+    <ng-container *ngIf="field != 'actions'">
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="field == 'name'" class="w-60">
+          <span class="text-primary-500 hover:text-primary-800 cursor-pointer  " (click)="previewDoc(element)">
+            {{ element[field]}}
+          </span>
+        </div>
+        <div *ngIf="field !== 'name'">
+          {{ element[field]}}
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container *ngIf="field == 'actions'">
+      <td mat-cell *matCellDef="let element">
+
+        <div *ngIf="!isFileInDocs((docs$ | async),  element._id)"
+          class="flex items-center cursor-pointer opacity-50 hover:opacity-100 text-white hover:text-primary transition-all text-sm"
+          (click)="addFileToProduction(production, element)">
+          <mat-icon svgIcon="heroicons_outline:arrow-sm-left" color="primary"></mat-icon>
+          <span>Add</span>
+        </div>
+      </td>
+    </ng-container>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+</table>
+</ng-container>

@@ -1,19 +1,21 @@
-<div class="my-4">
+<div class="my-4 ">
 
   <input id="image-file-input" class="absolute h-0 w-0 opacity-0 invisible pointer-events-none" type="file"
-    [multiple]="true" [accept]="'image/jpeg, image/png'" (change)="uploadFile(production, fileInput.files)"
+    [multiple]="true" [accept]="'image/jpeg, image/png'" (change)="uploadFile(fileInput.files)"
     #fileInput>
   <label class="
       flex items-center 
       border
       bg-primary-600
       text-white
-      justify-between px-8 w-80 h-20 rounded-md cursor-pointer hover:bg-slate-900" for="image-file-input" matRipple>
+      justify-between px-8 w-60 h-12 rounded-full cursor-pointer hover:bg-slate-900" for="image-file-input" matRipple>
 
-    <div>
-      Select files
+    
+    <mat-icon [svgIcon]="'heroicons_solid:cloud-upload'" style="color: currentColor"></mat-icon>
+    <div class="text-base">
+      Upload documents
     </div>
-    <mat-icon [svgIcon]="'heroicons_solid:cloud-upload'" color="primary-200"></mat-icon>
+
   </label>
   
 </div>
