@@ -74,7 +74,7 @@ export class ProductionsMockApi {
                     name: file.name,
                     type: 'IMAGE',
                     category: "documentation",
-                    file: file,
+                    _file: file,
                     "date added": new Date().toDateString(),        
                     _id
                 }
@@ -87,7 +87,7 @@ export class ProductionsMockApi {
         });
 
         this._fuseMockApiService
-        .onPut('api/productions/docs')
+        .onPut('api/upload/productions/docs')
         .reply(({ request }) => {
 
             const PROD_ID = request.body.PROD_ID
@@ -100,7 +100,7 @@ export class ProductionsMockApi {
                     name: file.name,
                     type: 'IMAGE',
                     category: "documentation",
-                    file: file,
+                    _file: file,
                     "date added": new Date().toDateString(),        
                     _id
                 }
@@ -116,11 +116,69 @@ export class ProductionsMockApi {
           
 
             const docs = cloneDeep(this._docs)
-            const production = this._productions.find( p =>  p.PROD_ID === PROD_ID)
-            const productionWithDocs = {...production, _docs: this._docs.filter( doc => production._docs.find( entry => entry._id === doc._id ))}
+            const production = this.selectProductionById(PROD_ID)
+            const dd = this.selectProductionDocs(production)
+            const productionWithDocs = {...production, _docs: dd}
            
             return [200, { docs, production: productionWithDocs }]
         });
 
+        this._fuseMockApiService
+        .onPatch('api/productions/docs')
+        .reply(({request}) => {
+            const {PROD_ID, DOC_ID} = request.body
+
+            console.log("API: ON REMOVE DOC FROM PRODUCTION", {PROD_ID, DOC_ID})
+            
+            let production = this.selectProductionById(PROD_ID)
+            //@ts-ignore
+            const productionDocsIds = production._docs.filter( entry => entry._id !== DOC_ID)
+            //@ts-ignore
+            production = {...production, _docs: productionDocsIds}
+            this._productions = this._productions.map( pr => pr.PROD_ID === PROD_ID ? production : pr )
+            const productionDocs = this.selectProductionDocs({_docs: productionDocsIds})
+            const productionResponse = {...production, _docs: productionDocs}
+            
+
+            console.log("API: ON REMOVE DOC FROM PRODUCTION: RESPONSE",productionDocsIds)
+
+            return [200, { production: productionResponse }]
+        })
+
+
+        this._fuseMockApiService
+        .onPut('api/productions/docs')
+        .reply(({request}) => {
+            const {PROD_ID, DOC_ID} = request.body
+
+            console.log("API: ON ADD FILE TO PRODUCTION", {PROD_ID, DOC_ID})
+            
+            let production =  cloneDeep(this.selectProductionById(parseInt(PROD_ID)))
+            
+            //@ts-ignore
+            
+            //@ts-ignore
+            production = {...production, _docs: [...production._docs, {_id: DOC_ID}]}
+           
+            this._productions = cloneDeep(this._productions.map( pr => pr.PROD_ID === parseInt(PROD_ID) ? production : pr ))
+            const productionDocs = this.selectProductionDocs(production)
+            const productionResponse = {...production, _docs: productionDocs}
+            
+            
+            //@ts-ignore
+            console.log("API: ON ADD FILE TO PRODUCTION", this._productions)
+
+            return [200, { production: productionResponse }]
+        })
+
+    }
+
+    selectProductionDocs(production): any[]
+    {
+        return this._docs.filter( doc => production._docs.find( entry => entry._id === doc._id )) 
+    }
+    selectProductionById(PROD_ID: number): any[]
+    {
+        return this._productions.find( p =>  p.PROD_ID === PROD_ID)
     }
 }

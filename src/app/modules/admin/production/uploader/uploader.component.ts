@@ -88,7 +88,7 @@ export class DocUploaderComponent implements OnInit, OnDestroy
             return;
         }
 
-        this._productionService.addDocsToProduction(this.PROD_ID, fileList).pipe(
+        this._productionService.uploadDocsToProduction(this.PROD_ID, fileList).pipe(
             map(() => {
                 // Get the note
                 // this.$ = this._notesService.note$;

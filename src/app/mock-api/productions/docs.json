@@ -5,28 +5,32 @@
        "type": "PDF",
        "category": "inspection instructions",
        "_id":"1",
-       "date added": "Thu Sep 01 2022"
+       "date added": "Thu Sep 01 2022",
+      "_file": ""
     },  
      {
        "name": "UK_RI-10157_D0",
       "category": "std repair instruction",
       "type": "PDF",
       "_id":"2",
-       "date added": "Thu Sep 01 2022"
+       "date added": "Thu Sep 01 2022",
+      "_file": ""
     },  
      {
        "name": "UK_AC-00026_A8",
       "category": "acceptance criteria",
       "type": "PDF",
       "_id":"3",
-       "date added": "Thu Sep 01 2022"
+       "date added": "Thu Sep 01 2022",
+    "_file": ""
     },  
      {
        "name": "LM693p",
       "category": "layup plan",
       "type": "XLS",
       "_id":"4",
-       "date added": "Thu Sep 01 2022"
+       "date added": "Thu Sep 01 2022",
+       "_file": ""
     },  
      {
        "name": "LM441P_v2.2",

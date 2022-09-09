@@ -29,6 +29,7 @@ export class DocsTable implements OnInit, AfterViewInit {
 
   // docs$: Observable<Doc[]> 
   production$: Observable<Production> 
+  PROD_ID: string
 
   flashMessage: 'success' | 'error' | null = null;
   isLoading: boolean = false;
@@ -66,13 +67,12 @@ export class DocsTable implements OnInit, AfterViewInit {
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((production) => {
                 console.log("ON ITIN TABLE _docs:", production.production._docs)
-                // Store the data
-                // this.docs = docs;
-
-                // Store the table data
+                this.PROD_ID = production.production.PROD_ID
+                // console.log("ON ITIN TABLE _docs PROD_ID", production.production._docs)
+              
                 this.dataSource.data = production.production._docs;
-                this.displayedColumns = [...Object.keys(production.production._docs[0]).filter( field => field[0] !== "_")]
-                // this.dataSource = new MatTableDataSource(docs.docs);
+                if(production.production._docs.length > 0)
+                this.displayedColumns = [...Object.keys(production.production._docs[0]).filter( field => field[0] !== "_"), "actions"]               
             });
 
 
@@ -176,6 +176,21 @@ export class DocsTable implements OnInit, AfterViewInit {
          });
      }
  
+
+     removeDoc(doc: Doc): void {
+      console.log("ABOUT TO REMOVE DOC", doc)
+      console.log("ABOUT TO REMOVE DOC PROD_ID", this.PROD_ID)
+      this._productionService.removeDocFromProduction(this.PROD_ID, doc._id).pipe(
+        map(() => {
+            // Get the note
+            // this.$ = this._notesService.note$;
+        })).subscribe();
+     }
+     previewDoc(doc: Doc): void {
+      console.log("ABOUT TO PREVIEW DOC", doc)
+     }
+
+
      /**
       * Show flash message
       */

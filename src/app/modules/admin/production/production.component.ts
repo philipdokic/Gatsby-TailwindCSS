@@ -16,7 +16,8 @@ export class ProductionComponent implements OnInit {
   @ViewChild('drawer') drawer: MatDrawer;
   @ViewChild('filesDrawer') filesDrawer: MatDrawer;
   drawerMode: 'over' | 'side' = 'side';
-  drawerOpened: boolean = true;
+  drawerOpened: boolean = false;
+  filesDrawerOpened: boolean = true;
   panels: any[] = [];
   selectedPanel: string = 'docs';
   private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -74,7 +75,7 @@ export class ProductionComponent implements OnInit {
               if ( matchingAliases.includes('lg') )
               {
                   this.drawerMode = 'side';
-                  this.drawerOpened = true;
+                  this.drawerOpened = false;
               }
               else
               {

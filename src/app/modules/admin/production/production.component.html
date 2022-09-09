@@ -70,7 +70,7 @@
             </div>
         </mat-drawer>
 
-        <mat-drawer class="w-full sm:w-128 dark:bg-gray-900" [mode]="drawerMode" [opened]="false" [position]="'end'"
+        <mat-drawer class="w-full sm:w-128 dark:bg-gray-900" [mode]="drawerMode" [opened]="filesDrawerOpened" [position]="'end'"
             [disableClose]="true" #filesDrawer>
             <div>
                 <file-manager></file-manager>

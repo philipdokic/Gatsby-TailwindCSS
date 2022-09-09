@@ -14,7 +14,7 @@ export interface ProductionData {
 }
 
 export interface Doc {
-    file: File,
+    _file: File,
     type: string,
     name: string,
     category: string,
