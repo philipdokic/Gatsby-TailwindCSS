@@ -12,7 +12,7 @@
 
 
                 <div class="w-full flex justify-start text-sm mt-4">
-                    <ng-container *ngIf="(productionKeys$ | async) as keys">
+                    <ng-container *ngIf="displayedFields as keys">
                         <ng-container *ngFor="let key of keys" class="flex flex-col mr-8">
                             <ng-container *ngIf="key !== 'NAME'">
                                 <div class="flex flex-col mr-8">

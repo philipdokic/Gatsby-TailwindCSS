@@ -8,7 +8,7 @@
       "ITEM": 108122,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "STOPPED",
-      "DOCS": [
+      "_docs": [
         {
          "_id":"1"
        },  
@@ -25,7 +25,7 @@
       "ITEM": 108123,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "PAUSED",
-      "DOCS": [
+      "_docs": [
         {
          "_id":"3"
        }
@@ -39,7 +39,7 @@
       "ITEM": 101970,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "ON",
-      "DOCS": [
+      "_docs": [
         {
           "_id":"4"
         }
@@ -53,7 +53,7 @@
       "ITEM": 102059,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "ON",
-      "DOCS": [
+      "_docs": [
         {
          "_id":"3"
        },  
@@ -70,7 +70,7 @@
       "ITEM": 102039,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "STOPPED",
-      "DOCS": [
+      "_docs": [
       
       ]
     },
@@ -82,7 +82,7 @@
       "ITEM": 108133,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "STOPPED",
-      "DOCS": [
+      "_docs": [
         {
          "_id":"1"
        },  
@@ -105,7 +105,7 @@
       "ITEM": 105134,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "STOPPED",
-      "DOCS": [
+      "_docs": [
         {
           "_id":"1"
         },  
@@ -128,7 +128,7 @@
       "ITEM": 108122,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "ON",
-      "DOCS": [
+      "_docs": [
         {
          "_id":"3"
        },  
@@ -145,7 +145,7 @@
       "ITEM": 108123,
       "DELIVERY_DATE": "10/02/2021",
       "STATE": "ON",
-      "DOCS": [
+      "_docs": [
         {
          "_id":"3"
        },  

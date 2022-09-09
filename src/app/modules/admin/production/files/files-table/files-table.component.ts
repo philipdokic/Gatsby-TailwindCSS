@@ -66,12 +66,12 @@ export class FilesTable implements OnInit, AfterViewInit {
     this._productionService.docs$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((docs) => {
-                console.log("ON ITIN TABLE FILES:", docs.docs)
+                console.log("ON ITIN TABLE FILES:", docs)
                 // Store the data
                 // this.docs = docs;
 
                 // Store the table data
-                this.dataSource.data = docs.docs;
+                this.dataSource.data = docs;
                 // this.displayedColumns = ["name","type"]
                 // this.dataSource = new MatTableDataSource(docs.docs);
             });

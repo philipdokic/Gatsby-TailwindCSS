@@ -36,7 +36,7 @@ export class ProductionsMockApi {
             // console.log("INSPECTIONS DATA", this._productions)
             const production = this._productions.find( production => production.PROD_ID === Number(PROD_ID))
             // if(!production) return [404,{message: "No production found"}]
-            const productionWithDocs = {...production, DOCS: this._docs.filter( doc => production.DOCS.find( entry => entry._id === doc._id ))}
+            const productionWithDocs = {...production, _docs: this._docs.filter( doc => production._docs.find( entry => entry._id === doc._id ))}
            
             return [200,{production: productionWithDocs}]
         
@@ -55,7 +55,7 @@ export class ProductionsMockApi {
         this._fuseMockApiService
         .onGet('api/docs')
         .reply(() => {
-            console.log("API DOCS REPLY")
+            console.log("API _docs REPLY")
             const docs = cloneDeep(this._docs)
             return [200, { docs }]
         })
@@ -107,17 +107,19 @@ export class ProductionsMockApi {
                 this._docs.push(doc)
 
                 console.log("====PRODUCTIONS PROD_ID", PROD_ID )
-                this._productions = this._productions.map( p =>  p.PROD_ID === PROD_ID ? {...p, DOCS: [...p.DOCS, {_id}]} : p )
+                this._productions = this._productions.map( p =>  p.PROD_ID === PROD_ID ? {...p, _docs: [...p._docs, {_id}]} : p )
 
                
 
-                console.log("====PRODUCTIONS AFTER UPLOAD DOCS", this._productions )
+                console.log("====PRODUCTIONS AFTER UPLOAD _docs", this._productions )
             }
           
 
             const docs = cloneDeep(this._docs)
             const production = this._productions.find( p =>  p.PROD_ID === PROD_ID)
-            return [200, { docs, production }]
+            const productionWithDocs = {...production, _docs: this._docs.filter( doc => production._docs.find( entry => entry._id === doc._id ))}
+           
+            return [200, { docs, production: productionWithDocs }]
         });
 
     }

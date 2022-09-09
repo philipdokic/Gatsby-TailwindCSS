@@ -6,7 +6,7 @@ export interface Production {
     "ITEM": number,
     "DELIVERY_DATE": string,
     "STATE": string,
-    "DOCS": Doc[]
+    "_docs": Doc[]
 }
 export interface ProductionData {
     production: Production,

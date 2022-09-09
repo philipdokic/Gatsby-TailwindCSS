@@ -85,10 +85,10 @@ export class ProductionService
     getDocs(): Observable<DocsList>
     {
 
-        console.log("DOCS SERVICE WORKS")
+        console.log("_docs SERVICE WORKS")
         return this._httpClient.get<DocsList>('api/docs').pipe(
             tap((response: DocsList) => {
-                console.log("RESPONSE", response)
+                console.log("_docs RESPONSE", response.docs)
                 this._docs.next(response.docs);
             })
         );
@@ -110,7 +110,7 @@ export class ProductionService
 
             tap((response: DocsProduction) => {
                 console.log("addDocsToProduction RESPONSE", response)
-                this._docs.next({docs: response.docs});
+                this._docs.next(response.docs);
                 this._production.next({production: response.production});
             })
             // switchMap((response: DocsProduction) => 

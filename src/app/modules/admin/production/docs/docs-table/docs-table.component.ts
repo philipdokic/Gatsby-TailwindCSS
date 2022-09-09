@@ -65,13 +65,13 @@ export class DocsTable implements OnInit, AfterViewInit {
     this._productionService.production
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((production) => {
-                console.log("ON ITIN TABLE DOCS:", production.production)
+                console.log("ON ITIN TABLE _docs:", production.production._docs)
                 // Store the data
                 // this.docs = docs;
 
                 // Store the table data
-                this.dataSource.data = production.production.DOCS;
-                this.displayedColumns = [...Object.keys(production.production.DOCS[0]).filter( field => field[0] !== "_")]
+                this.dataSource.data = production.production._docs;
+                this.displayedColumns = [...Object.keys(production.production._docs[0]).filter( field => field[0] !== "_")]
                 // this.dataSource = new MatTableDataSource(docs.docs);
             });
 

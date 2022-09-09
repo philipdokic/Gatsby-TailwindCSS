@@ -22,7 +22,7 @@ export class ProductionComponent implements OnInit {
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
   production$: Observable<Production>;
-  productionKeys$: Observable<string[]>;
+  displayedFields: string[];
 
   /**
    * Constructor
@@ -45,7 +45,10 @@ export class ProductionComponent implements OnInit {
   ngOnInit(): void
   {
     this.production$ = this._productionService.production;
-    this.productionKeys$ = this._productionService.productionKeys;
+
+    this._productionService.production.subscribe( production => {
+        this.displayedFields =   [...Object.keys(production.production).filter( field => field[0] !== "_")]
+    })
       // Setup available panels
       this.panels = [
           {
