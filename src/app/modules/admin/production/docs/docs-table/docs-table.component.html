@@ -1,36 +1,70 @@
-<ng-container *ngIf="dataSource.data.length > 0" >
-<table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
-  <ng-container *ngFor="let field of displayedColumns" [matColumnDef]="field">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header [sortActionDescription]="'Sort by '+ field" sticky>
-      {{field}} </th>
-    <ng-container *ngIf="field != 'actions'">
-      <td mat-cell *matCellDef="let element"> 
-        <div *ngIf="field == 'name'" class="w-60" >
-          <span class="text-primary-500 hover:text-primary-800 cursor-pointer  " (click)="previewDoc(element)" >
+<ng-container *ngIf="(production$ | async).production as production">
+  <ng-container *ngIf="dataSource.data.length > 0">
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)">
+      <ng-container *ngFor="let field of displayedColumns" [matColumnDef]="field">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header [sortActionDescription]="'Sort by '+ field" sticky>
+          {{field}} </th>
+        <ng-container *ngIf="field != 'remove'">
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="field == 'name'" class="w-60">
+              <span class="text-primary-500 hover:text-primary-800 cursor-pointer  " (click)="openViewer(element)">
+                {{ element[field]}}
+              </span>
+            </div>
+            <div *ngIf="field === 'type'">
+              <span class="text-xs uppercase tracking-widest font-medium text-slate-400">
+                {{ element[field]}}
+              </span>
+            </div>
+            <div *ngIf="field === 'date added'">
+              <span class="text-xs uppercase tracking-widest font-medium text-slate-400">
+                {{ element[field] | date:'MMM d'}}
+              </span>
+            </div>
+            <div *ngIf="field === 'category'">
+              <!-- <span class = "text-xs uppercase tracking-widest font-medium text-slate-400" >
             {{ element[field]}} 
-          </span>
-        </div>
-        <div *ngIf="field !== 'name'" >
-          {{ element[field]}} 
-        </div>
-      </td>
-    </ng-container>
-    
-    <ng-container *ngIf="field == 'actions'">
-      <td mat-cell *matCellDef="let element">
-        
-          <div class="flex items-center cursor-pointer opacity-50 hover:opacity-100 text-white hover:text-warn transition-all text-sm" (click)="removeDoc(element)">
-            <mat-icon svgIcon="heroicons_outline:x" color="warn"></mat-icon>            
-            <span >Remove</span>
-          </div>
-      </td>
-    </ng-container>
+          </span> -->
 
+              <select matNativeControl class="text-xs uppercase tracking-widest font-medium text-slate-600">
+                <option *ngFor="let category of ['inspection instructions','std repair instruction', 	'acceptance criteria', 'layup plan', 'bondline assessment']" 
+                  [value]="category" [selected]="element[field] === category" 
+                  
+                  >{{category}}</option>              
+              </select>
+              <!-- <mat-select > -->
+              <!-- <ng-container *ngFor="let category of ['INSPECTION INSTRUCTIONS','STD REPAIR INSTRUCTION', 	'ACCEPTANCE CRITERIA', 'BONDLINE ASSESSMENT']">
+                  <mat-option [value]="category">
+                    {{element[field]}}
+                  </mat-option>
+                </ng-container> -->
+              <!-- </mat-select> -->
+            </div>
+            <div *ngIf="!['name', 'type', 'date added', 'category'].includes(field)">
+              {{ element[field]}}
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container *ngIf="field == 'remove'">
+          <td mat-cell *matCellDef="let element">
+
+            <div
+              class="flex items-center cursor-pointer opacity-50 hover:opacity-100 text-white hover:text-warn transition-all text-sm"
+              (click)="removeDoc(element, production)">
+              <mat-icon style="scale: 0.5;" svgIcon="heroicons_outline:x" color="warn"></mat-icon>
+              <!-- <span >Remove</span> -->
+            </div>
+          </td>
+        </ng-container>
+
+      </ng-container>
+
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
   </ng-container>
-
-
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
 </ng-container>

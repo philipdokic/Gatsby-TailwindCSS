@@ -79,10 +79,11 @@ export class DocUploaderComponent implements OnInit, OnDestroy
             return;
         }
 
-        const allowedTypes = ['image/jpeg', 'image/png'];
+        const allowedTypes = ['image/jpeg', 'image/png', '.doc','.docx','application/msword', 'application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'];
         const file = fileList[0];
 
         // Return if the file is not allowed
+        console.log("FILE TYPE", file.type)
         if ( !allowedTypes.includes(file.type) )
         {
             return;

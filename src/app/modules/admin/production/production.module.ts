@@ -18,6 +18,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { SharedModule } from 'app/shared/shared.module';
 import { FilesTable } from './files/files-table/files-table.component';
 import { FilesComponent } from './files/files.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DocViewerComponent } from './viewer/viewer.component';
 
 @NgModule({
   imports: [
@@ -32,7 +35,9 @@ import { FilesComponent } from './files/files.component';
     MatButtonModule,
     MatSidenavModule,
     MatSlideToggleModule,
-    SharedModule
+    SharedModule,
+    MatSelectModule,
+    MatDialogModule
   ],
   declarations: [
     ProductionComponent,
@@ -40,7 +45,8 @@ import { FilesComponent } from './files/files.component';
     DocsTable,
     ProductionDocsComponent,
     FilesTable,
-    FilesComponent
+    FilesComponent,
+    DocViewerComponent
   ]
 })
 export class ProductionModule { }

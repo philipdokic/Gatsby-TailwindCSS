@@ -36,7 +36,7 @@ export class FilesTable implements OnInit, AfterViewInit {
   searchInputControl: UntypedFormControl = new UntypedFormControl();
   selectedDoc: Doc | null = null;
   selectedDocForm: UntypedFormGroup;
-  displayedColumns: string[] = ["actions", "name", "type"]
+  displayedColumns: string[] = ["add", "name", "type", "delete"]
   dataSource: MatTableDataSource<any> = new MatTableDataSource();
 
 
@@ -154,7 +154,7 @@ export class FilesTable implements OnInit, AfterViewInit {
   /**
    * Delete the selected doc using the form data
    */
-  deleteSelectedDoc(): void {
+  deleteSelectedFile(file: Doc, production: Production): void {
     // Open the confirmation dialog
     const confirmation = this._fuseConfirmationService.open({
       title: 'Delete doc',
@@ -172,15 +172,16 @@ export class FilesTable implements OnInit, AfterViewInit {
       // If the confirm button pressed...
       if (result === 'confirmed') {
 
+
         // Get the doc object
-        const doc = this.selectedDocForm.getRawValue();
+        // const doc = this.selectedDocForm.getRawValue();
 
         // Delete the doc on the server
-        //  this._inventoryService.deleteDoc(doc.id).subscribe(() => {
+         this._productionService.deleteFile(file, production).subscribe(() => {
 
-        //      // Close the details
-        //      this.closeDetails();
-        //  });
+             // Close the details
+             this.closeDetails();
+         });
       }
     });
   }

@@ -4,7 +4,7 @@
   <ng-container *ngFor="let field of displayedColumns" [matColumnDef]="field">
     <th mat-header-cell *matHeaderCellDef mat-sort-header [sortActionDescription]="'Sort by '+ field" sticky> {{field}}
     </th>
-    <ng-container *ngIf="field != 'actions'">
+    <ng-container *ngIf="!['add', 'delete'].includes(field)">
       <td mat-cell *matCellDef="let element">
         <div *ngIf="field == 'name'" class="w-60">
           <span class="text-primary-500 hover:text-primary-800 cursor-pointer  " (click)="previewDoc(element)">
@@ -17,7 +17,7 @@
       </td>
     </ng-container>
 
-    <ng-container *ngIf="field == 'actions'">
+    <ng-container *ngIf="field == 'add'">
       <td mat-cell *matCellDef="let element">
 
         <div *ngIf="!isFileInDocs((docs$ | async),  element._id)"
@@ -25,6 +25,17 @@
           (click)="addFileToProduction(production, element)">
           <mat-icon svgIcon="heroicons_outline:arrow-sm-left" color="primary"></mat-icon>
           <span>Add</span>
+        </div>
+      </td>
+    </ng-container>
+    <ng-container *ngIf="field == 'delete'">
+      <td mat-cell *matCellDef="let element">
+
+        <div 
+          class="flex  items-center cursor-pointer opacity-50 hover:opacity-100 text-white hover:text-warn transition-all text-sm"
+          (click)="deleteSelectedFile(element, production)">
+          <mat-icon style="scale: 0.6;" svgIcon="heroicons_outline:trash" color="primary" color="warn"></mat-icon>
+          <!-- <span >Delete</span> -->
         </div>
       </td>
     </ng-container>

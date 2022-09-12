@@ -19,8 +19,12 @@ export interface Doc {
     name: string,
     category: string,
     lastModifiedDate: string,
-    "Date added": string,
+    "date added": Date,
     _id: string
+}
+
+export interface DocDTO {
+    doc: Doc
 }
 
 export interface DocsList {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, tap, of, switchMap, throwError } from 'rxjs';
-import { Doc, DocsList, DocsProduction, Production, ProductionData } from './production.types';
+import { Doc, DocDTO, DocsList, DocsProduction, Production, ProductionData } from './production.types';
 
 @Injectable({
     providedIn: 'root'
@@ -10,6 +10,7 @@ export class ProductionService {
     // Private
     private _production: BehaviorSubject<any> = new BehaviorSubject(null);
     private _docs: BehaviorSubject<any> = new BehaviorSubject(null);
+    private _doc: BehaviorSubject<any> = new BehaviorSubject(null);
     private _files: BehaviorSubject<any> = new BehaviorSubject(null);
     // private _productionKeys: BehaviorSubject<any> = new BehaviorSubject(null);
 
@@ -35,6 +36,9 @@ export class ProductionService {
     // }
     get docs$(): Observable<any> {
         return this._docs.asObservable();
+    }
+    get doc$(): Observable<any> {
+        return this._doc.asObservable();
     }
     get files$(): Observable<any> {
         return this._files.asObservable();
@@ -91,6 +95,17 @@ export class ProductionService {
             })
         );
     }
+    getDocById(doc: Doc): Observable<DocDTO> {
+
+        console.log("getDocById SERVICE WORKS", doc)
+        const {_id} = doc
+        return this._httpClient.get<DocDTO>(`api/docs/${_id}`).pipe(
+            tap((response: DocDTO) => {
+                console.log("_docs RESPONSE", response.doc)
+                this._doc.next(response.doc);
+            })
+        );
+    }
 
     createDocs(fileList: FileList): Observable<DocsList> {
         return this._httpClient.post<DocsList>('api/docs', { files: fileList }).pipe(
@@ -120,8 +135,8 @@ export class ProductionService {
         );
     }
 
-    removeDocFromProduction(PROD_ID: string, DOC_ID: string) {
-        console.log("removeDocFromProduction START", PROD_ID)
+    removeDocFromProduction(production: Production, DOC_ID: string) {
+        const {PROD_ID} = production
 
         return this._httpClient.patch<any>(`api/productions/docs`, { PROD_ID, DOC_ID }).pipe(
 
@@ -143,6 +158,19 @@ export class ProductionService {
                 this._docs.next(response.production._docs);
             })
         );
+    }
+
+    deleteFile(file: Doc, production: Production){
+        const {_id} = file
+        return this._httpClient.delete<any>(`api/docs/${_id}` ).pipe(
+            tap((response) => {
+                console.log("DELETE FILE RESPONSE", response)
+                const pr = {...production, _docs: production._docs.filter(  doc => doc._id !== _id ) }
+                this._docs.next(pr._docs);
+                // this._production.next(pr);
+                this._files.next(response.files);
+            })
+        ); 
     }
 
 }

@@ -31,6 +31,10 @@ th.mat-column-position, td.mat-column-position {
   border-right: 1px solid #e0e0e0;
 }
 
+.mat-icon {
+  width: 10px;
+}
+
 
 .inventory-grid {
   grid-template-columns: 48px auto 40px;
