@@ -215,7 +215,6 @@ export class DocsTable implements OnInit, AfterViewInit {
   }
 
   openViewer(doc: Doc): void {
-    console.log("OPEN VIEWER", doc)
     this._matDialog.open(DocViewerComponent, {
       autoFocus: false,
       data: {

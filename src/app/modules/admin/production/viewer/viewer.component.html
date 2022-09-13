@@ -1,5 +1,34 @@
-<div class="flex flex-col flex-auto md:w-160 md:min-w-160 -m-6">
-    <ng-container *ngIf="(doc$ | async) as doc">
-        Doc: {{doc.name}}
+<div class="flex flex-col flex-auto md:w-160 md:min-w-1/2 min-w-1/2 -m-6">
+    <ng-container *ngIf="doc">
+        <div class="flex items-center justify-between bg-blue-600 text-on-primary p-4 font-medium">
+            <div class="flex items-center">
+                <div class="mx-2">
+                    {{doc.name}}
+                </div>
+                <div class="text-xs tracking-wider uppercase bg-white text-blue-500 px-2 py-1 rounded text-center">
+                    {{doc.type}}
+                </div>
+            </div>
+            <div class="flex items-center">
+               <button class="mr-4" mat-flat-button matDialogClose>
+                <mat-icon svgIcon="heroicons_outline:download"></mat-icon>
+                <span class="ml-2">
+                    Download
+                </span>
+                </button>
+                <button mat-flat-button matDialogClose>
+                    Close
+                </button>
+            </div>
+        </div>
+        <ng-container *ngIf="doc._pages as pages">
+            <div class="h-160 overflow-scroll overflow-y-scroll">
+                <div>
+                    <div *ngFor="let page of pages">
+                        <img [src]="page.url" alt="">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
     </ng-container>
 </div>

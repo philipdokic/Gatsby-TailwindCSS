@@ -6,7 +6,33 @@
        "category": "inspection instructions",
        "_id":"1",
        "date added": "Thu Sep 01 2022",
-      "_file": ""
+      "_file": "",
+      "_pages": [
+          {
+            "fileIndex": "file_10471994286022102",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_10471994286022102"
+          },
+          {
+            "fileIndex": "file_8043483370303715",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_8043483370303715"
+          },       
+          {
+            "fileIndex": "file_36573788401498897",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_36573788401498897"
+          },
+          {
+            "fileIndex": "file_9560411812133804",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_9560411812133804"
+          },       
+          {
+            "fileIndex": "file_3900007343867782",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_3900007343867782"
+          },
+          {
+            "fileIndex": "file_04175991604973439",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_04175991604973439"
+          }       
+      ]
     },  
      {
        "name": "UK_RI-10157_D0",
@@ -14,7 +40,33 @@
       "type": "PDF",
       "_id":"2",
        "date added": "Thu Sep 01 2022",
-      "_file": ""
+      "_file": "",
+      "_pages": [
+         {
+            "fileIndex": "file_10471994286022102",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_10471994286022102"
+          },
+          {
+            "fileIndex": "file_8043483370303715",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_8043483370303715"
+          },       
+          {
+            "fileIndex": "file_36573788401498897",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_36573788401498897"
+          },
+          {
+            "fileIndex": "file_9560411812133804",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_9560411812133804"
+          },       
+          {
+            "fileIndex": "file_3900007343867782",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_3900007343867782"
+          },
+          {
+            "fileIndex": "file_04175991604973439",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_04175991604973439"
+          }       
+      ]
     },  
      {
        "name": "UK_AC-00026_A8",
@@ -22,7 +74,33 @@
       "type": "PDF",
       "_id":"3",
        "date added": "Thu Sep 01 2022",
-    "_file": ""
+    "_file": "",
+      "_pages": [
+         {
+            "fileIndex": "file_10471994286022102",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_10471994286022102"
+          },
+          {
+            "fileIndex": "file_8043483370303715",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_8043483370303715"
+          },       
+          {
+            "fileIndex": "file_36573788401498897",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_36573788401498897"
+          },
+          {
+            "fileIndex": "file_9560411812133804",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_9560411812133804"
+          },       
+          {
+            "fileIndex": "file_3900007343867782",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_3900007343867782"
+          },
+          {
+            "fileIndex": "file_04175991604973439",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_04175991604973439"
+          }       
+      ]
     },  
      {
        "name": "LM693p",
@@ -30,14 +108,67 @@
       "type": "XLS",
       "_id":"4",
        "date added": "Thu Sep 01 2022",
-       "_file": ""
+       "_file": "",
+      "_pages": [
+         {
+            "fileIndex": "file_10471994286022102",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_10471994286022102"
+          },
+          {
+            "fileIndex": "file_8043483370303715",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_8043483370303715"
+          },       
+          {
+            "fileIndex": "file_36573788401498897",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_36573788401498897"
+          },
+          {
+            "fileIndex": "file_9560411812133804",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_9560411812133804"
+          },       
+          {
+            "fileIndex": "file_3900007343867782",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_3900007343867782"
+          },
+          {
+            "fileIndex": "file_04175991604973439",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_04175991604973439"
+          }       
+      ]
     },  
      {
        "name": "LM441P_v2.2",
       "category": "bondline assessment",
       "type": "XLS",
       "_id":"5",
-       "date added": "Thu Sep 01 2022"
+       "date added": "Thu Sep 01 2022",
+       "_file": "",
+      "_pages": [
+         {
+            "fileIndex": "file_10471994286022102",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_10471994286022102"
+          },
+          {
+            "fileIndex": "file_8043483370303715",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_8043483370303715"
+          },       
+          {
+            "fileIndex": "file_36573788401498897",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_36573788401498897"
+          },
+          {
+            "fileIndex": "file_9560411812133804",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_9560411812133804"
+          },       
+          {
+            "fileIndex": "file_3900007343867782",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_3900007343867782"
+          },
+          {
+            "fileIndex": "file_04175991604973439",
+            "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_04175991604973439"
+          }       
+      ]
     }  
 ]
 }

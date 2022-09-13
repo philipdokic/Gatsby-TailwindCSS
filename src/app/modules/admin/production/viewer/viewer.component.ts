@@ -14,6 +14,7 @@ import { Doc } from '../production.types';
 export class DocViewerComponent implements OnInit, OnDestroy, AfterViewInit {
 
     doc$: Observable<Doc>;
+    doc: Doc
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
@@ -27,8 +28,9 @@ export class DocViewerComponent implements OnInit, OnDestroy, AfterViewInit {
 
     ngOnInit(): void {
         console.log("VIEWER DOC:", this._data.doc)
-        this._productionService.getDocById(this._data.doc).subscribe();
-        this.doc$ = this._productionService.doc$;
+        this.doc = this._data.doc
+        // this._productionService.getDocById(this._data.doc).subscribe();
+        // this.doc$ = this._productionService.doc$;
     }
 
     ngAfterViewInit(): void {

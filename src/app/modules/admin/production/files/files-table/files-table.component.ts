@@ -1,14 +1,17 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
+import { cloneDeep } from 'lodash';
 import { combineLatest, combineLatestAll, debounceTime, map, merge, Observable, Subject, switchMap, takeUntil } from 'rxjs';
 import { ProductionService } from '../../production.service';
 import { Doc, Production } from '../../production.types';
+import { DocViewerComponent } from '../../viewer/viewer.component';
 
 
 /**
@@ -50,6 +53,7 @@ export class FilesTable implements OnInit, AfterViewInit {
     private _fuseConfirmationService: FuseConfirmationService,
     private _formBuilder: UntypedFormBuilder,
     private _productionService: ProductionService,
+    private _matDialog: MatDialog,
   ) { }
 
   @ViewChild(MatSort) sort: MatSort;
@@ -97,10 +101,14 @@ export class FilesTable implements OnInit, AfterViewInit {
       .subscribe();
   }
 
-  getRecord(row: any) {
-    this.router.navigateByUrl(`docions/${row.PROD_ID}`)
+  openViewer(doc: Doc): void {
+    this._matDialog.open(DocViewerComponent, {
+      autoFocus: false,
+      data: {
+        doc: cloneDeep(doc)
+      }
+    });
   }
-
   previewDoc(file: Doc) {
 
   }
