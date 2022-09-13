@@ -41,12 +41,27 @@ export const futuristicNavigation: FuseNavigationItem[] = [
         icon    : 'heroicons_outline:home',
         children: [
             {
+                id   : 'dashboard',
+                title: 'Dashboard',
+                type : 'basic',
+                icon : 'heroicons_outline:adjustments',
+                link : '/dashboard'
+            },
+            {
                 id   : 'productions',
                 title: 'Productions',
                 type : 'basic',
                 icon : 'heroicons_solid:collection',
                 link : '/productions'
-            }
+            },
+            {
+                id   : 'defects',
+                title: 'Defects',
+                type : 'basic',
+                icon : 'heroicons_outline:lightning-bolt',
+                link : '/defects'
+            },
+          
         ]
     } 
 ];

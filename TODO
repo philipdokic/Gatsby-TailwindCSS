@@ -1,18 +1,15 @@
 
 Todo:
+  ☐ Productions list
+  ☐ Defects
+  ☐ Reports
+  ☐ Dashboard
+  ☐ Login page
   ✔ Viewer @done(22-09-13 16:54)
-  ☐ Doc view
+  ✔ Doc view @done(22-09-13 17:09)
     ✔ Categories @done(22-09-12 17:49)
     ✔ File types @done(22-09-12 17:49)
     ✔ File names @done(22-09-12 17:49)
-    ☐ File icons
     ✔ Date @done(22-09-12 17:49)
-    ☐ Production state icon    
-  ☐ Reports
   ☐ Parse doc
-  ☐ Productions list
-  ☐ Icons/Styles etc
-  ☐ Login page
-  ☐ Defects
-  ☐ Dashboard
   

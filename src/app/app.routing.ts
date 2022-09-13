@@ -86,6 +86,7 @@ export const appRoutes: Route[] = [
         children   : [
             {path: 'example', loadChildren: () => import('app/modules/admin/example/example.module').then(m => m.ExampleModule)},
             {path: 'defects', loadChildren: () => import('app/modules/admin/defects/defects.module').then(m => m.DefectsModule)},
+            {path: 'dashboard', loadChildren: () => import('app/modules/admin/analytics/analytics.module').then(m => m.AnalyticsModule)},
             {path: 'productions', loadChildren: () => import('app/modules/admin/productions/productions.module').then(m => m.ProductionsModule)},
             {path: 'productions/:id', loadChildren: () => import('app/modules/admin/production/production.module').then(m => m.ProductionModule)},
         ]

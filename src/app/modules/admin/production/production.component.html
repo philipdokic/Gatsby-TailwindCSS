@@ -3,9 +3,8 @@
         <div
             class="xl:flex md:hidden sm:hidden flex sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent flex-wrap">
             <div class="flex flex-col ">
-                <div class="font-normal text-slate-400 text-base">
-                    Production
-                </div>
+                <a class="text-primary cursor-pointer mb-2" [routerLink]="['/productions']"> ← Productions
+                </a>             
                 <div class="font-semibold text-lg">
                     {{production.NAME}}
                 </div>
@@ -70,8 +69,8 @@
             </div>
         </mat-drawer>
 
-        <mat-drawer class="w-full sm:w-128 dark:bg-gray-900" [mode]="drawerMode" [opened]="filesDrawerOpened" [position]="'end'"
-            [disableClose]="true" #filesDrawer>
+        <mat-drawer class="w-full sm:w-128 dark:bg-gray-900" [mode]="drawerMode" [opened]="filesDrawerOpened"
+            [position]="'end'" [disableClose]="true" #filesDrawer>
             <div>
                 <file-manager></file-manager>
             </div>
