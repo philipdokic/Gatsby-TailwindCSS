@@ -1,0 +1,80 @@
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-hidden bg-white">
+
+    <mat-drawer-container
+        class="flex-auto h-full"
+        >
+
+        <!-- Drawer -->
+        <mat-drawer
+            class="w-full sm:w-128 bg-white"
+            [mode]="drawerMode"
+            [opened]="false"
+            [position]="'end'"
+            [disableClose]="true"
+            #matDrawer>
+            <defect-details></defect-details> 
+        </mat-drawer>
+
+        <mat-drawer-content class="flex flex-col bg-white">
+
+            <!-- Main -->
+            <div class="flex flex-col flex-auto">
+
+                <!-- Header -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between py-8 px-6 md:px-8">
+                    <!-- Title -->
+                    <div>
+                        <div class="text-4xl font-extrabold tracking-tight leading-none">Defects</div>
+                        <div class="flex font-medium text-secondary">
+                            <div *ngFor="let item of [{n:2,c: 'rgb(45, 173, 45)'},{n:4,c: 'rgb(220, 230, 72)'},{n:1,c: 'rgb(249, 34, 34)'}]; let i = index" 
+                            class=" mt-4 flex flex-col mr-4 ">
+                                <div   class="uppercase tracking-widest text-xs">
+                                    Level {{i+1}}
+                                </div>
+                                <div class="text-black font-bold py-2" 
+                                [style]="'border-bottom: 8px solid ' + item.c">
+                                    {{item.n}}
+                                </div>
+                                
+                            </div>
+                            <!-- <span *ngIf="defectsCount.incomplete === 0">All defects completed!</span> -->
+                            <!-- <span *ngIf="defectsCount.incomplete !== 0">{{defectsCount.incomplete}} remaining defects</span> -->
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="flex items-center justify-start ml-40 h-full">
+                    <div>
+                        <img
+                        class="w-50"
+                        src="assets/images/lm/blade.svg">                        
+                    </div>
+                </div>
+                <div class="absolute">
+                    <div class="mt-56">
+                        <div 
+                        *ngFor="let defect of defects"
+                        (click) = "openDefect()"
+                        class="w-8 h-8 absolute opacity-60 hover:opacity-100 cursor-pointer" 
+                        [style]="'margin-top:' + defect.y + 'px; margin-left:' + defect.x + 'px; background:' + colors[defect.level]" ></div>
+                    </div>
+                </div>
+
+
+                <!-- <ng-template #noDefects>
+                    <div class="flex flex-auto flex-col items-center justify-center bg-gray-100 bg-white">
+                        <mat-icon
+                            class="icon-size-24"
+                            [svgIcon]="'heroicons_outline:clipboard-list'"></mat-icon>
+                        <div class="mt-4 text-2xl font-semibold tracking-tight text-secondary">No defects</div>
+                    </div>
+                </ng-template> -->
+
+            </div>
+
+        </mat-drawer-content>
+
+    </mat-drawer-container>
+
+</div>

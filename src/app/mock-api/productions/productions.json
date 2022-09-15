@@ -7,7 +7,7 @@
       "RESOURCE": "OC68/7D#1",
       "ITEM": 108122,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "STOPPED",
+      "_STATE": "STOPPED",
       "_docs": [
         {
          "_id":"1"
@@ -24,7 +24,7 @@
       "RESOURCE": "OC6B.7UW#1",
       "ITEM": 108123,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "PAUSED",
+      "_STATE": "PAUSED",
       "_docs": [
         {
          "_id":"3"
@@ -38,7 +38,7 @@
       "RESOURCE": "BM80.5R0#2",
       "ITEM": 101970,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "ON",
+      "_STATE": "ON",
       "_docs": [
         {
           "_id":"4"
@@ -52,7 +52,7 @@
       "RESOURCE": "WW60.6RC#1",
       "ITEM": 102059,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "ON",
+      "_STATE": "ON",
       "_docs": [
         {
          "_id":"3"
@@ -69,7 +69,7 @@
       "RESOURCE": "FA168.7#1",
       "ITEM": 102039,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "STOPPED",
+      "_STATE": "STOPPED",
       "_docs": [
       
       ]
@@ -81,7 +81,7 @@
       "RESOURCE": "FIEB.7#1",
       "ITEM": 108133,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "STOPPED",
+      "_STATE": "STOPPED",
       "_docs": [
         {
          "_id":"1"
@@ -104,7 +104,7 @@
       "RESOURCE": "OC60.7DW#1",
       "ITEM": 105134,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "STOPPED",
+      "_STATE": "STOPPED",
       "_docs": [
         {
           "_id":"1"
@@ -127,7 +127,7 @@
       "RESOURCE": "OC68.7UW#1",
       "ITEM": 108122,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "ON",
+      "_STATE": "ON",
       "_docs": [
         {
          "_id":"3"
@@ -144,7 +144,7 @@
       "RESOURCE": "FA168.7#1",
       "ITEM": 108123,
       "DELIVERY_DATE": "10/02/2021",
-      "STATE": "ON",
+      "_STATE": "ON",
       "_docs": [
         {
          "_id":"3"

@@ -46,7 +46,7 @@ export class TableStickyColumns implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
-    this.displayedColumns = [...Object.keys(this.dataSourceInput[0])].filter( f => f.search('_'))
+    this.displayedColumns = ['STATE', ...Object.keys(this.dataSourceInput[0])].filter( f => f.search('_'))
     // , 'star']
   }
 

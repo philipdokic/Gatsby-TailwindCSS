@@ -1,12 +1,19 @@
-<div class="flex flex-col w-full min-w-0 sm:absolute sm:inset-0 sm:overflow-hidden">
+<div class="flex flex-col w-full min-w-0 sm:absolute sm:inset-0 sm:overflow-hidden bg-white">
     <ng-container *ngIf="(production$ | async).production as production">
         <div
             class="xl:flex md:hidden sm:hidden flex sm:flex-row flex-0 sm:items-center sm:justify-between p-6 sm:py-8 sm:px-10 border-b bg-card dark:bg-transparent flex-wrap">
             <div class="flex flex-col ">
                 <a class="text-primary cursor-pointer mb-2" [routerLink]="['/productions']"> ← Productions
                 </a>             
-                <div class="font-semibold text-lg">
-                    {{production.NAME}}
+                <div class="font-semibold text-lg flex">
+                    <div>
+                        {{production.NAME}}
+                    </div>
+                    <div class="ml-4">
+                        <mat-icon class=""  *ngIf="production._STATE === 'PAUSED'" svgIcon="mat_solid:play_arrow"></mat-icon>
+                        <mat-icon   *ngIf="production._STATE === 'STOPPED'" svgIcon="mat_solid:pause"></mat-icon>
+                        <mat-icon *ngIf="production._STATE === 'ON'" svgIcon="mat_solid:stop"></mat-icon>                     
+                    </div>
                 </div>
 
 
@@ -15,12 +22,13 @@
                         <ng-container *ngFor="let key of keys" class="flex flex-col mr-8">
                             <ng-container *ngIf="key !== 'NAME'">
                                 <div class="flex flex-col mr-8">
-                                    <div class="font-normal text-slate-400 text-xs tracking-wide">
+                                    <div class="font-normal text-slate-400 text-xs tracking-wide" >
                                         {{key}}
                                     </div>
                                     <div class=" text-sm">
                                         {{production[key]}}
                                     </div>
+                                   
                                 </div>
 
                             </ng-container>
@@ -32,7 +40,7 @@
                 <docs-uploader></docs-uploader>
                 <button class="ml-3" mat-flat-button [color]="'secondary'" (click)="openFileManager()"
                     [matTooltip]="'Shortcut: Ctrl + /'">
-                    <mat-icon [svgIcon]="'heroicons_outline:folder'"></mat-icon>
+                    <mat-icon [svgIcon]="'heroicons_outline:cloud'"></mat-icon>
                 </button>
             </div>
         </div>
@@ -101,6 +109,9 @@
                         <!-- Account -->
                         <ng-container *ngSwitchCase="'docs'">
                             <production-docs></production-docs>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'report'">
+                            <production-report></production-report>
                         </ng-container>
                     </ng-container>
                 </div>

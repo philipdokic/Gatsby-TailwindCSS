@@ -6,7 +6,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header [sortActionDescription]="'Sort by '+ field" sticky>
         {{field}} </th>
       <td class="cursor-pointer " mat-cell *matCellDef="let element">
-        <ng-container *ngIf="!['NAME'].includes(field)">
+        <ng-container *ngIf="!['NAME','STATE'].includes(field)">
           <span class="text-xs uppercase tracking-widest font-medium text-slate-500 pr-2">
             {{element[field]}}
           </span>
@@ -15,6 +15,13 @@
           <span class="text-xs uppercase tracking-widest font-medium text-primary pr-2">
             {{element[field]}}
           </span>
+        </ng-container>
+        <ng-container *ngIf="field === 'STATE'">
+       
+         <mat-icon class=""  *ngIf="element._STATE === 'PAUSED'" svgIcon="mat_solid:play_arrow"></mat-icon>
+         <mat-icon   *ngIf="element._STATE === 'STOPPED'" svgIcon="mat_solid:pause"></mat-icon>
+         <mat-icon *ngIf="element._STATE === 'ON'" svgIcon="mat_solid:stop"></mat-icon>
+       
         </ng-container>
       </td>
     </ng-container>

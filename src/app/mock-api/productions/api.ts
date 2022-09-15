@@ -197,7 +197,33 @@ export class ProductionsMockApi {
             _file: file,
             "date added": new Date(),
             _id,
-            lastModifiedDate: new Date().toDateString()
+            lastModifiedDate: new Date().toDateString(),
+            _pages: [
+                {
+                    "fileIndex": "file_10471994286022102",
+                    "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_10471994286022102"
+                  },
+                  {
+                    "fileIndex": "file_8043483370303715",
+                    "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_8043483370303715"
+                  },       
+                  {
+                    "fileIndex": "file_36573788401498897",
+                    "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_36573788401498897"
+                  },
+                  {
+                    "fileIndex": "file_9560411812133804",
+                    "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_9560411812133804"
+                  },       
+                  {
+                    "fileIndex": "file_3900007343867782",
+                    "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_3900007343867782"
+                  },
+                  {
+                    "fileIndex": "file_04175991604973439",
+                    "url": "https://storage.googleapis.com/spector-upload-bucket/media%2Ffile_04175991604973439"
+                  }       
+            ]
         }
         return doc
     }

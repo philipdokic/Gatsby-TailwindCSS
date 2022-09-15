@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { Defect, DefectsList } from './defects.types';
+import { Defect, DefectDTO, DefectsList } from './defects.types';
 
 @Injectable({
     providedIn: 'root'
@@ -10,6 +10,7 @@ export class DefectsService
 {
     // Private
     private _defects: BehaviorSubject<any> = new BehaviorSubject(null);
+    private _defect: BehaviorSubject<any> = new BehaviorSubject(null);
 
     /**
      * Constructor
@@ -29,6 +30,10 @@ export class DefectsService
     {
         return this._defects.asObservable();
     }
+    get defect(): Observable<any>
+    {
+        return this._defect.asObservable();
+    }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
@@ -45,6 +50,17 @@ export class DefectsService
             tap((response: DefectsList) => {
                 console.log("RESPONSE", response)
                 this._defects.next(response);
+            })
+        );
+    }
+    getDefect(id: string): Observable<DefectDTO>
+    {
+
+        console.log("DEFECT SERVICE WORKS ID", id)
+        return this._httpClient.get<DefectDTO>(`api/defects/${id}`).pipe(
+            tap((response: DefectDTO) => {
+                console.log("RESPONSE", response)
+                this._defect.next(response);
             })
         );
     }

@@ -1,15 +1,16 @@
 
 Todo:
-  ☐ Productions list
-  ☐ Defects
   ☐ Reports
   ☐ Dashboard
+  ☐ iPad
   ☐ Login page
+  ✔ Productions list @done(22-09-14 18:21)
+  ✔ Defects @done(22-09-14 18:21)
   ✔ Viewer @done(22-09-13 16:54)
   ✔ Doc view @done(22-09-13 17:09)
-    ✔ Categories @done(22-09-12 17:49)
-    ✔ File types @done(22-09-12 17:49)
-    ✔ File names @done(22-09-12 17:49)
-    ✔ Date @done(22-09-12 17:49)
-  ☐ Parse doc
+  ✔ Categories @done(22-09-12 17:49)
+  ✔ File types @done(22-09-12 17:49)
+  ✔ File names @done(22-09-12 17:49)
+  ✔ Date @done(22-09-12 17:49)
+  ✔ Parse doc @done(22-09-14 18:21)
   

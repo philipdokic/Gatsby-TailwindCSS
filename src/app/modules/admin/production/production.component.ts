@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Observable, Subject, takeUntil} from 'rxjs';
 import { ProductionService } from './production.service';
 import { DocsList, Production } from './production.types';
@@ -12,12 +12,12 @@ import { FuseMediaWatcherService } from '@fuse/services/media-watcher/media-watc
   encapsulation  : ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductionComponent implements OnInit {
+export class ProductionComponent implements OnInit, AfterViewInit {
   @ViewChild('drawer') drawer: MatDrawer;
   @ViewChild('filesDrawer') filesDrawer: MatDrawer;
   drawerMode: 'over' | 'side' = 'side';
-  drawerOpened: boolean = false;
-  filesDrawerOpened: boolean = true;
+  drawerOpened: boolean = true;
+  filesDrawerOpened: boolean = false;
   panels: any[] = [];
   selectedPanel: string = 'docs';
   private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -59,10 +59,10 @@ export class ProductionComponent implements OnInit {
               description: 'Production instructions'
           },
           {
-              id         : 'reports',
+              id         : 'report',
               icon       : 'heroicons_outline:document-report',
-              title      : 'Reports',
-              description: 'Inspection reports'
+              title      : 'Report',
+              description: 'Production status'
           },          
       ];
 
@@ -86,6 +86,11 @@ export class ProductionComponent implements OnInit {
               // Mark for check
               this._changeDetectorRef.markForCheck();
           });
+         
+  }
+
+  ngAfterViewInit(): void {
+      this.drawer.open()
   }
 
   /**
@@ -109,12 +114,13 @@ export class ProductionComponent implements OnInit {
    */
   goToPanel(panel: string): void
   {
+    
       this.selectedPanel = panel;
 
       // Close the drawer on 'over' mode
       if ( this.drawerMode === 'over' )
       {
-          this.drawer.close();
+          this.drawer.open();
       }
   }
 

@@ -21,6 +21,18 @@ import { FilesComponent } from './files/files.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DocViewerComponent } from './viewer/viewer.component';
+import { ProductionReportComponent } from './report/report.component';
+import { DefectsDetailsComponent } from './report/details/details.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatRippleModule } from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { FuseFindByKeyPipeModule } from '@fuse/pipes/find-by-key';
 
 @NgModule({
   imports: [
@@ -37,7 +49,17 @@ import { DocViewerComponent } from './viewer/viewer.component';
     MatSlideToggleModule,
     SharedModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    DragDropModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatDividerModule,
+    MatMenuModule,
+    MatMomentDateModule,
+    MatProgressBarModule,
+    MatRippleModule,
+    MatTooltipModule,
+    FuseFindByKeyPipeModule,
   ],
   declarations: [
     ProductionComponent,
@@ -46,7 +68,9 @@ import { DocViewerComponent } from './viewer/viewer.component';
     ProductionDocsComponent,
     FilesTable,
     FilesComponent,
-    DocViewerComponent
+    DocViewerComponent,
+    ProductionReportComponent,
+    DefectsDetailsComponent
   ]
 })
 export class ProductionModule { }

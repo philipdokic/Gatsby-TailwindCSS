@@ -63,3 +63,7 @@ export interface DefectsList
 {
     defects: Defect[]
 }
+export interface DefectDTO
+{
+    defect: Defect
+}

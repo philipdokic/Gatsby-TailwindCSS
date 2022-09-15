@@ -23,6 +23,17 @@ export class DefectsMockApi {
             const defects = cloneDeep(this._defects)
             return [200,{defects}]
         })
+
+        this._fuseMockAPiService
+        .onGet('api/defects/:id')
+        .reply( (request) =>  {
+            const {id} = request.urlParams
+            console.log("API: ID", id)
+            const defects = cloneDeep(this._defects)
+            console.log("API: DEFECTS", defects)
+            const defect = defects.find( de => de.QCRID_LINENUM === id)
+            return [200, {defect}]
+        })
         
         this._fuseMockAPiService
         .onPut('api/defects')
