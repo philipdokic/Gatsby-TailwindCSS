@@ -31,6 +31,7 @@
    "CROSSGENAREA_DESC": "Edge reinforcement",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030667-2",
+   "id": "032QN030667-2",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -57,7 +58,13 @@
    "LGTHSTART_DIM_1M_DESC": "0 - 1 M",
    "LGTHSTART_DIM_1M_KEY": 1,
    "TOTAL_NUMBEROFGLASSLAYERS": 6,
-   "REINSPECTEDNAME": "Maria Reyes Martinez Valero"
+   "REINSPECTEDNAME": "Maria Reyes Martinez Valero",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030667",
@@ -90,6 +97,7 @@
    "CROSSGENAREA_DESC": "Edge reinforcement",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030667-4",
+   "id": "032QN030667-4",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -116,7 +124,13 @@
    "LGTHSTART_DIM_1M_DESC": "2 - 3 M",
    "LGTHSTART_DIM_1M_KEY": 3,
    "TOTAL_NUMBEROFGLASSLAYERS": 6,
-   "REINSPECTEDNAME": "Maria Reyes Martinez Valero"
+   "REINSPECTEDNAME": "Maria Reyes Martinez Valero",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030667",
@@ -149,6 +163,7 @@
    "CROSSGENAREA_DESC": "Edge reinforcement",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030667-7",
+   "id": "032QN030667-7",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -175,7 +190,13 @@
    "LGTHSTART_DIM_1M_DESC": "42 - 43 M",
    "LGTHSTART_DIM_1M_KEY": 43,
    "TOTAL_NUMBEROFGLASSLAYERS": 4,
-   "REINSPECTEDNAME": "Maria Reyes Martinez Valero"
+   "REINSPECTEDNAME": "Maria Reyes Martinez Valero",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030410",
@@ -208,6 +229,7 @@
    "CROSSGENAREA_DESC": "None",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030410-4",
+   "id": "032QN030410-4",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -234,7 +256,13 @@
    "LGTHSTART_DIM_1M_DESC": "31 - 32 M",
    "LGTHSTART_DIM_1M_KEY": 32,
    "TOTAL_NUMBEROFGLASSLAYERS": 2,
-   "REINSPECTEDNAME": "Ana Maria Sanchez Migallon Lopez Villanueva"
+   "REINSPECTEDNAME": "Ana Maria Sanchez Migallon Lopez Villanueva",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030413",
@@ -267,6 +295,7 @@
    "CROSSGENAREA_DESC": "Root laminate",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030413-3",
+   "id": "032QN030413-3",
    "QCRINTERNALEXTERNAL_DESC": "Internal",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -293,7 +322,13 @@
    "LGTHSTART_DIM_1M_DESC": "0 - 1 M",
    "LGTHSTART_DIM_1M_KEY": 1,
    "TOTAL_NUMBEROFGLASSLAYERS": 8,
-   "REINSPECTEDNAME": ""
+   "REINSPECTEDNAME": "",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030668",
@@ -326,6 +361,7 @@
    "CROSSGENAREA_DESC": "Edge reinforcement",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030668-4",
+   "id": "032QN030668-4",
    "QCRINTERNALEXTERNAL_DESC": "Internal",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -352,7 +388,13 @@
    "LGTHSTART_DIM_1M_DESC": "7 - 8 M",
    "LGTHSTART_DIM_1M_KEY": 8,
    "TOTAL_NUMBEROFGLASSLAYERS": 4,
-   "REINSPECTEDNAME": "Maria Reyes Martinez Valero"
+   "REINSPECTEDNAME": "Maria Reyes Martinez Valero",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+    ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030670",
@@ -385,6 +427,7 @@
    "CROSSGENAREA_DESC": "Flange",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030670-2",
+   "id": "032QN030670-2",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -411,7 +454,13 @@
    "LGTHSTART_DIM_1M_DESC": "39 - 40 M",
    "LGTHSTART_DIM_1M_KEY": 40,
    "TOTAL_NUMBEROFGLASSLAYERS": 3,
-   "REINSPECTEDNAME": "Marius Mihale"
+   "REINSPECTEDNAME": "Marius Mihale",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030638",
@@ -444,6 +493,7 @@
    "CROSSGENAREA_DESC": "Root laminate",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030638-6",
+   "id": "032QN030638-6",
    "QCRINTERNALEXTERNAL_DESC": "Internal",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -470,7 +520,13 @@
    "LGTHSTART_DIM_1M_DESC": "0 - 1 M",
    "LGTHSTART_DIM_1M_KEY": 1,
    "TOTAL_NUMBEROFGLASSLAYERS": 6,
-   "REINSPECTEDNAME": "Humberto Lopez Saldarriaga"
+   "REINSPECTEDNAME": "Humberto Lopez Saldarriaga",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030638",
@@ -503,6 +559,7 @@
    "CROSSGENAREA_DESC": "Root laminate",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030638-9",
+   "id": "032QN030638-9",
    "QCRINTERNALEXTERNAL_DESC": "Internal",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -529,7 +586,13 @@
    "LGTHSTART_DIM_1M_DESC": "1 - 2 M",
    "LGTHSTART_DIM_1M_KEY": 2,
    "TOTAL_NUMBEROFGLASSLAYERS": 6,
-   "REINSPECTEDNAME": "Humberto Lopez Saldarriaga"
+   "REINSPECTEDNAME": "Humberto Lopez Saldarriaga",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030639",
@@ -562,6 +625,7 @@
    "CROSSGENAREA_DESC": "None",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030639-1",
+   "id": "032QN030639-1",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -588,7 +652,13 @@
    "LGTHSTART_DIM_1M_DESC": "42 - 43 M",
    "LGTHSTART_DIM_1M_KEY": 43,
    "TOTAL_NUMBEROFGLASSLAYERS": 0,
-   "REINSPECTEDNAME": "Maria Reyes Martinez Valero"
+   "REINSPECTEDNAME": "Maria Reyes Martinez Valero",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030639",
@@ -621,6 +691,7 @@
    "CROSSGENAREA_DESC": "Edge reinforcement",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030639-3",
+   "id": "032QN030639-3",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -647,7 +718,13 @@
    "LGTHSTART_DIM_1M_DESC": "21 - 22 M",
    "LGTHSTART_DIM_1M_KEY": 22,
    "TOTAL_NUMBEROFGLASSLAYERS": 2,
-   "REINSPECTEDNAME": "Maria Reyes Martinez Valero"
+   "REINSPECTEDNAME": "Maria Reyes Martinez Valero",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030639",
@@ -680,6 +757,7 @@
    "CROSSGENAREA_DESC": "None",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030639-8",
+   "id": "032QN030639-8",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -706,7 +784,13 @@
    "LGTHSTART_DIM_1M_DESC": "6 - 7 M",
    "LGTHSTART_DIM_1M_KEY": 7,
    "TOTAL_NUMBEROFGLASSLAYERS": 18,
-   "REINSPECTEDNAME": "Maria Jesus Rodriguez Alvarez"
+   "REINSPECTEDNAME": "Maria Jesus Rodriguez Alvarez",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030639",
@@ -739,6 +823,7 @@
    "CROSSGENAREA_DESC": "None",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030639-2",
+   "id": "032QN030639-2",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -765,7 +850,13 @@
    "LGTHSTART_DIM_1M_DESC": "33 - 34 M",
    "LGTHSTART_DIM_1M_KEY": 34,
    "TOTAL_NUMBEROFGLASSLAYERS": 0,
-   "REINSPECTEDNAME": "Maria Reyes Martinez Valero"
+   "REINSPECTEDNAME": "Maria Reyes Martinez Valero",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030639",
@@ -798,6 +889,7 @@
    "CROSSGENAREA_DESC": "Root laminate",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030639-10",
+   "id": "032QN030639-10",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -824,7 +916,13 @@
    "LGTHSTART_DIM_1M_DESC": "1 - 2 M",
    "LGTHSTART_DIM_1M_KEY": 2,
    "TOTAL_NUMBEROFGLASSLAYERS": 11,
-   "REINSPECTEDNAME": "Maria Jesus Rodriguez Alvarez"
+   "REINSPECTEDNAME": "Maria Jesus Rodriguez Alvarez",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030432",
@@ -857,6 +955,7 @@
    "CROSSGENAREA_DESC": "Flange",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030432-22",
+   "id": "032QN030432-22",
    "QCRINTERNALEXTERNAL_DESC": "Internal",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -883,7 +982,13 @@
    "LGTHSTART_DIM_1M_DESC": "36 - 37 M",
    "LGTHSTART_DIM_1M_KEY": 37,
    "TOTAL_NUMBEROFGLASSLAYERS": 7,
-   "REINSPECTEDNAME": "Humberto Lopez Saldarriaga"
+   "REINSPECTEDNAME": "Humberto Lopez Saldarriaga",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030643",
@@ -916,6 +1021,7 @@
    "CROSSGENAREA_DESC": "None",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030643-2",
+   "id": "032QN030643-2",
    "QCRINTERNALEXTERNAL_DESC": "Internal",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -942,7 +1048,13 @@
    "LGTHSTART_DIM_1M_DESC": "13 - 14 M",
    "LGTHSTART_DIM_1M_KEY": 14,
    "TOTAL_NUMBEROFGLASSLAYERS": 0,
-   "REINSPECTEDNAME": "Maria Reyes Martinez Valero"
+   "REINSPECTEDNAME": "Maria Reyes Martinez Valero",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030435",
@@ -975,6 +1087,7 @@
    "CROSSGENAREA_DESC": "None",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030435-9",
+   "id": "032QN030435-9",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -1001,7 +1114,13 @@
    "LGTHSTART_DIM_1M_DESC": "69 - 70 M",
    "LGTHSTART_DIM_1M_KEY": 70,
    "TOTAL_NUMBEROFGLASSLAYERS": 0,
-   "REINSPECTEDNAME": "Vicente Eladio Navarro Prada"
+   "REINSPECTEDNAME": "Vicente Eladio Navarro Prada",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030435",
@@ -1034,6 +1153,7 @@
    "CROSSGENAREA_DESC": "None",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030435-12",
+   "id": "032QN030435-12",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -1060,7 +1180,13 @@
    "LGTHSTART_DIM_1M_DESC": "12 - 13 M",
    "LGTHSTART_DIM_1M_KEY": 13,
    "TOTAL_NUMBEROFGLASSLAYERS": 0,
-   "REINSPECTEDNAME": "Claudia Liliana Hurtado Lopez"
+   "REINSPECTEDNAME": "Claudia Liliana Hurtado Lopez",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030651",
@@ -1093,6 +1219,7 @@
    "CROSSGENAREA_DESC": "None",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030651-13",
+   "id": "032QN030651-13",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -1119,7 +1246,13 @@
    "LGTHSTART_DIM_1M_DESC": "65 - 66 M",
    "LGTHSTART_DIM_1M_KEY": 66,
    "TOTAL_NUMBEROFGLASSLAYERS": 2,
-   "REINSPECTEDNAME": "Ana Maria Sanchez Migallon Lopez Villanueva"
+   "REINSPECTEDNAME": "Ana Maria Sanchez Migallon Lopez Villanueva",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030652",
@@ -1152,6 +1285,7 @@
    "CROSSGENAREA_DESC": "Edge reinforcement",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030652-4",
+   "id": "032QN030652-4",
    "QCRINTERNALEXTERNAL_DESC": "Internal",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",
@@ -1178,7 +1312,13 @@
    "LGTHSTART_DIM_1M_DESC": "4 - 5 M",
    "LGTHSTART_DIM_1M_KEY": 5,
    "TOTAL_NUMBEROFGLASSLAYERS": 6,
-   "REINSPECTEDNAME": "Humberto Lopez Saldarriaga"
+   "REINSPECTEDNAME": "Humberto Lopez Saldarriaga",
+    "tags"      : [
+    "91658b8a-f382-4b0c-a53f-e9390351c2c5",
+    "51483dd3-cb98-4400-9128-4bd66b455807"
+   ],
+    "dueDate"   :  "2017-10-18T13:03:37.943Z",
+    "priority": 1
  },
  {
    "QCRID": "032QN030676",
@@ -1211,6 +1351,7 @@
    "CROSSGENAREA_DESC": "Biaxial/core area",
    "POSBUSH": "",
    "QCRPRODTRANSID": "032QN030676-4",
+   "id": "032QN030676-4",
    "QCRINTERNALEXTERNAL_DESC": "External",
    "FACTORY": 32,
    "LOCATIONID": "ES-CAS",

@@ -19,7 +19,7 @@ export class ProductionComponent implements OnInit, AfterViewInit {
   drawerOpened: boolean = true;
   filesDrawerOpened: boolean = false;
   panels: any[] = [];
-  selectedPanel: string = 'docs';
+  selectedPanel: string = 'report';
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
   production$: Observable<Production>;

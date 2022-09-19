@@ -22,7 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DocViewerComponent } from './viewer/viewer.component';
 import { ProductionReportComponent } from './report/report.component';
-import { DefectsDetailsComponent } from './report/details/details.component';
+import { DefectInfoComponent } from './report/defect/defect.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -30,9 +30,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatRippleModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatRippleModule, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FuseFindByKeyPipeModule } from '@fuse/pipes/find-by-key';
+import {MatTabsModule} from '@angular/material/tabs';
+import moment from 'moment';
+import { DefectDetailsComponent } from './report/defect/details/details.component';
 
 @NgModule({
   imports: [
@@ -60,6 +64,8 @@ import { FuseFindByKeyPipeModule } from '@fuse/pipes/find-by-key';
     MatRippleModule,
     MatTooltipModule,
     FuseFindByKeyPipeModule,
+    MatTabsModule,
+    MatDatepickerModule
   ],
   declarations: [
     ProductionComponent,
@@ -70,7 +76,24 @@ import { FuseFindByKeyPipeModule } from '@fuse/pipes/find-by-key';
     FilesComponent,
     DocViewerComponent,
     ProductionReportComponent,
-    DefectsDetailsComponent
-  ]
+    DefectInfoComponent,
+    DefectDetailsComponent
+  ],
+  providers   : [
+    {
+        provide : MAT_DATE_FORMATS,
+        useValue: {
+            parse  : {
+                dateInput: moment.ISO_8601
+            },
+            display: {
+                dateInput         : 'll',
+                monthYearLabel    : 'MMM YYYY',
+                dateA11yLabel     : 'LL',
+                monthYearA11yLabel: 'MMMM YYYY'
+            }
+        }
+    }
+]
 })
 export class ProductionModule { }

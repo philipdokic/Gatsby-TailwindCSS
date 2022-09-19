@@ -56,7 +56,14 @@ export interface Defect
     "LGTHSTART_DIM_1M_DESC": string,
     "LGTHSTART_DIM_1M_KEY": number,
     "TOTAL_NUMBEROFGLASSLAYERS": number,
-    "REINSPECTEDNAME": string
+    "REINSPECTEDNAME": string,
+    tags: string[],
+    dueDate: Date,
+    priority: 0 | 1 | 2,
+    id: string,
+    notes: string,
+    completed: boolean,
+    order: number
 }
 
 export interface DefectsList
@@ -66,4 +73,10 @@ export interface DefectsList
 export interface DefectDTO
 {
     defect: Defect
+}
+
+export interface Tag
+{
+    id?: string;
+    title?: string;
 }

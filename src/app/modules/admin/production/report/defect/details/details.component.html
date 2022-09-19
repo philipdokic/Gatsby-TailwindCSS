@@ -1,0 +1,156 @@
+    <form class="flex w-full flex-col flex-auto" [formGroup]="defectForm">
+
+        <div class="flex justify-between items-center w-full">
+            <button class="pr-4 pl-3.5" mat-button (click)="toggleCompleted()">
+
+                <!-- Mark as complete -->
+                <ng-container *ngIf="!defectForm.get('completed').value">
+                    <div class="flex items-center justify-center">
+                        <mat-icon [svgIcon]="'heroicons_outline:check-circle'"></mat-icon>
+                        <span class="ml-2 font-semibold">MARK AS RESOLVED</span>
+                    </div>
+                </ng-container>
+
+                <!-- Mark as incomplete -->
+                <ng-container *ngIf="defectForm.get('completed').value">
+                    <div class="flex items-center justify-center">
+                        <mat-icon class="text-primary" [svgIcon]="'heroicons_outline:check-circle'"></mat-icon>
+                        <span class="ml-2 font-semibold">MARK AS UNRESOLVED</span>
+                    </div>
+                </ng-container>
+            </button>
+            <!-- Priority -->
+            <div class="w-30">
+                <div class="flex items-center mt-1.5 px-4 leading-9 rounded-full cursor-pointer" [ngClass]="{'text-green-800 bg-green-200 dark:text-green-100 dark:bg-green-500': defect.priority === 0,
+                    'text-gray-800 bg-yellow-200 dark:text-yellow-100 dark:bg-yellow-500': defect.priority === 1,
+                    'text-red-800 bg-red-200 dark:text-red-100 dark:bg-red-500': defect.priority === 2}"
+                    [matMenuTriggerFor]="priorityMenu">
+
+                    <!-- Level 1 -->
+                    <ng-container *ngIf="defect.priority === 0">
+                        <mat-icon class="icon-size-5 text-current" [svgIcon]="'heroicons_solid:arrow-narrow-down'">
+                        </mat-icon>
+                        <span class="ml-2 mr-1 text-md font-medium">Level 1</span>
+                    </ng-container>
+
+                    <!-- Level 2 -->
+                    <ng-container *ngIf="defect.priority === 1">
+                        <mat-icon class="icon-size-4 text-current" [svgIcon]="'heroicons_solid:minus'"></mat-icon>
+                        <span class="ml-2 mr-1 text-md font-medium">Lvel 2</span>
+                    </ng-container>
+
+                    <!-- Level 3 -->
+                    <ng-container *ngIf="defect.priority === 2">
+                        <mat-icon class="icon-size-4 text-current" [svgIcon]="'heroicons_solid:arrow-narrow-up'">
+                        </mat-icon>
+                        <span class="ml-2 mr-1 text-md font-medium">Level 3</span>
+                    </ng-container>
+                </div>
+                <mat-menu #priorityMenu="matMenu">
+                    <!-- Level 1 -->
+                    <button [ngClass]="{'bg-hover': defect.priority === 0}" mat-menu-item
+                        (click)="setDefectPriority(0)">
+                        <span class="inline-flex items-center justify-between w-full min-w-30 leading-5">
+                            <span class="font-medium">Level 1</span>
+                            <mat-icon class="mr-0 icon-size-4 text-green-600 dark:text-green-500"
+                                [svgIcon]="'heroicons_solid:arrow-narrow-down'"></mat-icon>
+                        </span>
+                    </button>
+
+                    <!-- Level 2 -->
+                    <button [ngClass]="{'bg-hover': defect.priority === 1}" mat-menu-item
+                        (click)="setDefectPriority(1)">
+                        <span class="inline-flex items-center justify-between w-full min-w-30 leading-5">
+                            <span class="font-medium">Level 2</span>
+                            <mat-icon class="mr-0 icon-size-4 text-gray-600 dark:text-gray-500"
+                                [svgIcon]="'heroicons_solid:minus'"></mat-icon>
+                        </span>
+                    </button>
+
+                    <!-- Level 3 -->
+                    <button [ngClass]="{'bg-hover': defect.priority === 2}" mat-menu-item
+                        (click)="setDefectPriority(2)">
+                        <span class="inline-flex items-center justify-between w-full min-w-30 leading-5">
+                            <span class="font-medium">Level 3</span>
+                            <mat-icon class="mr-0 icon-size-4 text-red-600 dark:text-red-500"
+                                [svgIcon]="'heroicons_solid:arrow-narrow-up'"></mat-icon>
+                        </span>
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <!-- Title -->
+        <div>
+            <!-- <mat-form-field class="fuse-mat-textarea fuse-mat-no-subscript w-full">
+                <textarea
+                    matInput
+                    [formControlName]="'title'"
+                    [spellcheck]="false"
+                    matTextareaAutosize
+                    #titleField></textarea>
+            </mat-form-field> -->
+        </div>
+
+
+        <!-- Tags -->
+        <div class="mt-8">
+            <div class="font-medium mb-1.5">Tags</div>
+            <div class="flex flex-wrap items-center -m-1.5">
+                <!-- Tags -->
+                <ng-container *ngIf="defect.tags.length">
+                    <ng-container *ngFor="let tag of (defect.tags | fuseFindByKey:'id':tags); trackBy: trackByFn">
+                        <div
+                            class="flex items-center justify-center px-4 m-1.5 rounded-full leading-9 text-gray-500 bg-gray-100 dark:text-gray-300 dark:bg-gray-700">
+                            <span class="text-md font-medium whitespace-nowrap">{{tag.title}}</span>
+                        </div>
+                    </ng-container>
+                </ng-container>
+
+            </div>
+        </div>
+
+
+        <!-- Priority and Due date -->
+        <div class="flex flex-wrap items-center mt-8">
+
+
+
+            <!-- Due date -->
+            <div class="ml-6">
+                <div class="font-medium">Due date</div>
+                <div class="relative flex items-center mt-1.5 px-4 leading-9 rounded-full cursor-pointer"
+                    [ngClass]="{'text-gray-500 bg-gray-100 dark:text-gray-300 dark:bg-gray-700': !defect.dueDate,
+                                'text-green-800 bg-green-200 dark:text-green-100 dark:bg-green-500': defect.dueDate && !isOverdue(),
+                                'text-red-800 bg-red-200 dark:text-red-100 dark:bg-red-500': defect.dueDate && isOverdue()}" (click)="dueDatePicker.open()">
+                    <mat-icon class="icon-size-5 text-current" [svgIcon]="'heroicons_solid:calendar'"></mat-icon>
+                    <span class="ml-2 text-md font-medium">
+                        <ng-container *ngIf="defect.dueDate">{{defect.dueDate | date:'longDate'}}</ng-container>
+                        <ng-container *ngIf="!defect.dueDate">Not set</ng-container>
+                    </span>
+                    <mat-form-field
+                        class="fuse-mat-no-subscript fuse-mat-dense invisible absolute inset-0 -mt-2.5 opacity-0 pointer-events-none">
+                        <input matInput [formControlName]="'dueDate'" [matDatepicker]="dueDatePicker">
+                        <mat-datepicker #dueDatePicker>
+                            <mat-datepicker-actions>
+                                <button mat-button (click)="defectForm.get('dueDate').setValue(null)"
+                                    matDatepickerCancel>Clear
+                                </button>
+                                <button class="" mat-flat-button [color]="'primary'" matDatepickerApply>Select
+                                </button>
+                            </mat-datepicker-actions>
+                        </mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Notes -->
+        <div class="mt-8">
+            <mat-form-field class="fuse-mat-textarea fuse-mat-no-subscript w-full">
+                <mat-label>Notes</mat-label>
+                <textarea matInput [formControlName]="'notes'" [spellcheck]="false" matTextareaAutosize></textarea>
+            </mat-form-field>
+        </div>
+
+    </form>

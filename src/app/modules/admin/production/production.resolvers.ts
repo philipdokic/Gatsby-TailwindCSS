@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DefectsService } from '../defects/defects.service';
+import { Tag } from '../defects/defects.types';
 import { ProductionService } from './production.service';
 
 @Injectable({
@@ -29,6 +30,9 @@ export class ProductionResolver implements Resolve<any>
      * @param route
      * @param state
      */
+
+    
+
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>
     {
         // console.log("RESOLVER INSPECTION ActivatedRouteSnapshot", route.params)
@@ -37,6 +41,36 @@ export class ProductionResolver implements Resolve<any>
         this._productionService.getDocs()
         // this._defectService.getDefect('032QN030667-2')
         return this._productionService.getProduction(PROD_ID);
+    }
+}
+
+
+
+@Injectable({
+    providedIn: 'root'
+})
+export class DefectsTagsResolver implements Resolve<any>
+{
+    /**
+     * Constructor
+     */
+    constructor(private _defectsService: DefectsService)
+    {
+    }
+
+    // -----------------------------------------------------------------------------------------------------
+    // @ Public methods
+    // -----------------------------------------------------------------------------------------------------
+
+    /**
+     * Resolver
+     *
+     * @param route
+     * @param state
+     */
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Tag[]>
+    {
+        return this._defectsService.getTags();
     }
 }
 

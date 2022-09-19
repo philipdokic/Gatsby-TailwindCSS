@@ -24,12 +24,13 @@ interface Defect {
 }
 
 @Component({
-    selector       : 'defect-details',
-    templateUrl    : './details.component.html',
+    selector       : 'defect-info',
+    templateUrl    : './defect.component.html',
+    styleUrls: ['./defect.component.css'],
     encapsulation  : ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DefectsDetailsComponent implements OnInit, AfterViewInit, OnDestroy
+export class DefectInfoComponent implements OnInit, AfterViewInit, OnDestroy
 {
     @ViewChild('tagsPanelOrigin') private _tagsPanelOrigin: ElementRef;
     @ViewChild('tagsPanel') private _tagsPanel: TemplateRef<any>;
@@ -76,9 +77,9 @@ export class DefectsDetailsComponent implements OnInit, AfterViewInit, OnDestroy
               // Get the note
               // this.$ = this._notesService.note$;
             })).subscribe();
-        this.defect$ = this._defectService.defect
+        this.defect$ = this._defectService.defect$
 
-        this._defectService.defect.subscribe( def => console.log("FETCHED DEFECT", def))
+        this._defectService.defect$.subscribe( def => console.log("FETCHED DEFECT", def))
         // Open the drawer
         this._productionReportComponent.matDrawer.close();
 

@@ -65,7 +65,7 @@ export class ProductionReportComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        this.matDrawer.close()
+        this.matDrawer.open()
        
         // Subscribe to media query change
         this._fuseMediaWatcherService.onMediaQueryChange$('(min-width: 1440px)')
