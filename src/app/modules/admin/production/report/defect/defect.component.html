@@ -1,18 +1,15 @@
-<div class="flex-col flex">
-    <div class="w-20 absolute">
-        <button mat-menu-item (click)="closeDrawer()">
-            <mat-icon [svgIcon]="'heroicons_outline:x'"></mat-icon>
-        </button>
-    </div>
-    <ng-container *ngIf="(defect$ | async) && (defect$ | async).defect as defect">
-        <div class="flex items-center justify-between w-full">
-            <mat-tab-group>
-                <mat-tab label="Details">
-                    <defect-details></defect-details>
-                </mat-tab>
-                <mat-tab label="Input data"> Content 2 </mat-tab>
+<div class="w-20 absolute -right-8 mt-2">
+    <button style="width: 50px !important; border-radius: 50px 0 0 50px" mat-menu-item (click)="closeDrawer()">
+        <mat-icon [svgIcon]="'heroicons_outline:x'"></mat-icon>
+    </button>
+</div>
+<ng-container *ngIf="(defect$ | async) && (defect$ | async).defect as defect">
+        <div class="flex-col flex w-full">
+            <defect-details></defect-details>
+            <div class="w-full my-8" style="border-bottom: 1px solid rgb(223, 223, 223)"></div>
+            <mat-tab-group animationDuration="100ms">
+                <mat-tab label="Input data"><defect-data></defect-data> </mat-tab>
                 <mat-tab label="Photos"> Content 3 </mat-tab>
             </mat-tab-group>
         </div>
-    </ng-container>
-</div>
+</ng-container>

@@ -1,0 +1,15 @@
+<ng-container *ngIf="(defect$ | async).defect as defect">
+
+ <div class="w-full flex flex-wrap"  style="border-bottom: 1px solid silver;">
+    <div *ngFor="let field of defectFields" class="w-1/2 flex flex-col p-2 even:border-r " 
+    style="border-left: 1px solid silver; border-top: 1px solid silver; border-color: silver" >
+      <div  class="uppercase tracking-widest text-xs">
+        {{field.name}}
+      </div>
+      <div>
+        {{defect[field.key]}}
+      </div>
+    </div>
+ </div>
+  
+</ng-container>

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { FuseMockApiService, FuseMockApiUtils } from "@fuse/lib/mock-api";
 import { assign, cloneDeep } from "lodash";
 import { defects } from "./data";
-import { tags as tagsData } from 'app/mock-api/defects/data';
+import { tags as tagsData, media as mediaData } from 'app/mock-api/defects/data';
 
 @Injectable({
     providedIn: "root"
@@ -11,6 +11,7 @@ export class DefectsMockApi {
 
     private readonly _defects: any[]
     private _tags: any[] = tagsData;
+    private _media: any[] = mediaData;
 
     constructor(private _fuseMockApiService: FuseMockApiService) {
         this.registerHandlers()
@@ -18,6 +19,15 @@ export class DefectsMockApi {
     }
 
     registerHandlers(): void {
+
+        this._fuseMockApiService
+        .onGet('api/defects/media')
+        .reply(() =>{ 
+            
+            return [
+            200,
+            cloneDeep(this._media)
+        ]});
 
          // -----------------------------------------------------------------------------------------------------
         // @ Tags - GET

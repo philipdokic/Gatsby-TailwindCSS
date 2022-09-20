@@ -1,12 +1,25 @@
 
 Todo:
   ☐ Reports
-    ☐ Inputs
-    ☐ Defect data
-    ☐ Photos
+    ☐ Details
+      ☐ Layout
+      ☐ Tags correct
+      ☐ Order
+      ☐ Add some fields to show level dependancy
+    ☐ Move ↓ to tabs
+      ☐ Input data
+      ☐ Photos
+    ☐ Level dependant details
+    ☐ Selected marker
+    ☐ Order on marker
+    ☐ State on marker
+    ☐ Defects stats
+    ☐ Hide Upload buttons for Report
   ☐ Dashboard
   ☐ iPad
   ☐ Login page
+  ☐ LM Logo
+  ☐ Fuse → Spector
   ✔ Productions list @done(22-09-14 18:21)
   ✔ Defects @done(22-09-14 18:21)
   ✔ Viewer @done(22-09-13 16:54)

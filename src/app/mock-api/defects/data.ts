@@ -29,3 +29,22 @@ export const tags = [
         title: 'Discuss'
     }
 ];
+
+export const media = [
+    {
+        fileIndex: '001',
+        url: 'https://d2n4wb9orp1vta.cloudfront.net/cms/HPC1108_Windbladepart1_a.jpg;width=550'
+    },
+    {
+        fileIndex: '002',
+        url: 'https://thewere42.files.wordpress.com/2013/01/207e8f52241702c0df6af1a9bbee3d2e.jpeg'
+    },
+    {
+        fileIndex: '003',
+        url: 'https://www.jeccomposites.com/wp-content/uploads/2021/11/dsdsd-630x500.jpg'
+    },
+    {
+        fileIndex: '004',
+        url: 'https://nawindpower.com/wp-content/uploads/2016/04/covestro.png'
+    },
+]
