@@ -1,0 +1,8 @@
+<ng-container *ngIf="(photos$ | async) as photos"  >
+  <div class="flex flex-wrap" >
+    <div *ngFor="let photo of photos"  class="w-50 h-50 overflow-hidden rounded-md mr-4 mb-4" >
+      <img [src]="photo.url" alt="" class="h-50 max-w-none w-auto" >      
+    </div>
+  </div>
+
+</ng-container>

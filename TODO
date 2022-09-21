@@ -1,21 +1,19 @@
 
 Todo:
+  ☐ Dashboard
   ☐ Reports
     ☐ Details
-      ☐ Layout
-      ☐ Tags correct
+      ✔ Layout @done(22-09-21 13:27)
+      ✔ Tags correct @done(22-09-21 18:30)
       ☐ Order
-      ☐ Add some fields to show level dependancy
-    ☐ Move ↓ to tabs
-      ☐ Input data
-      ☐ Photos
-    ☐ Level dependant details
-    ☐ Selected marker
+    ✔ Move ↓ to tabs @done(22-09-21 18:30)
+      ✔ Input data @done(22-09-21 13:28)
+      ✔ Photos @done(22-09-21 15:10)
+    ✔ Selected marker @done(22-09-21 18:30)
     ☐ Order on marker
-    ☐ State on marker
+    ✔ State on marker @done(22-09-21 18:45)
     ☐ Defects stats
-    ☐ Hide Upload buttons for Report
-  ☐ Dashboard
+    ✔ Hide Upload buttons for Report @done(22-09-21 18:45)
   ☐ iPad
   ☐ Login page
   ☐ LM Logo

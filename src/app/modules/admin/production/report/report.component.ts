@@ -4,17 +4,15 @@ import { DOCUMENT } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { MatDrawer } from '@angular/material/sidenav';
-import { filter, fromEvent, Subject, takeUntil } from 'rxjs';
+import { filter, fromEvent, map, Observable, Subject, takeUntil } from 'rxjs';
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
+import { DefectsService } from '../../defects/defects.service';
+import { Defect } from '../../defects/defects.types';
+import normalize  from 'array-normalize';
 
 
-interface Defect {
-    x: number,
-    y: number,
-    size: number,
-    level: 1 | 2 | 3  
-}
+
 
 
 
@@ -32,14 +30,17 @@ export class ProductionReportComponent implements OnInit, OnDestroy
     drawerMode: 'side' | 'over';
     selectedDefect: Defect;
     defects: Defect[];
+    // defects$: Observable<Defect[]>;
+    levels = ["Level 1","Level 2","Level 3"]
+    normalizedSizes: number[]
     defectsCount: any = {
-        level_1: 0,
-        level_2: 0,
-        level_3: 0,
+        "Level 1": 0,
+        "Level 2": 0,
+        "Level 3": 0,
         total: 0
     };
     colors = {
-        1: 'rgb(45, 173, 45)', 2: 'rgb(220, 230, 72)', 3: 'rgb(249, 34, 34)'
+        "Level 1": 'rgb(45, 173, 45)', "Level 2": 'rgb(220, 230, 72)', "Level 3": 'rgb(249, 34, 34)'
     }
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
@@ -51,7 +52,8 @@ export class ProductionReportComponent implements OnInit, OnDestroy
         @Inject(DOCUMENT) private _document: any,
         private _router: Router,
         private _fuseMediaWatcherService: FuseMediaWatcherService,
-        private _fuseNavigationService: FuseNavigationService
+        private _fuseNavigationService: FuseNavigationService,
+        private _defectService: DefectsService
     )
     {
     }
@@ -76,34 +78,20 @@ export class ProductionReportComponent implements OnInit, OnDestroy
                 this.drawerMode = state.matches ? 'side' : 'over';
 
                 // Mark for check
-                this._changeDetectorRef.markForCheck();
+                // this._changeDetectorRef.markForCheck();
             });
 
-        this.defects = [
-            {
-                x: 200, y: 100, size: 20, level: 1
-            },
-            {
-                x: 210, y: 220, size: 50, level: 1
-            },
-            {
-                x: 300, y: 300, size: 10, level: 2
-            },
-            {
-                x: 290, y: 100, size: 100, level: 2
-            },
-            {
-                x: 260, y: 600, size: 40, level: 2
-            },
-            {
-                x: 310, y: 60, size: 20, level: 2
-            },
-            {
-                x: 230, y: 240, size: 30, level: 3
-            },
-            
-        ]
+        //  = this._defectService.defects
 
+        this._defectService.defects.subscribe( defects => {
+            this.defects = defects.defects
+
+            this.normalizedSizes = normalize(this.defects.map( d => d.dimension.size))
+            this.levels.forEach( level => this.defectsCount[level] = this.defects.filter( d => d.ERRORLEVEL === level).length )
+            this.defectsCount.total = this.defects.length
+            this.selectedDefect = this.defects[0]
+            console.log('DEFECTS COUNT', this.defectsCount)
+        })
        
     }
 
@@ -130,8 +118,15 @@ export class ProductionReportComponent implements OnInit, OnDestroy
       
     }
 
-    openDefect(): void {
+    openDefect(defect: Defect): void {
         this.matDrawer.open()
+        this.selectedDefect = defect
+        console.log("£ SELECCTED DEFECT QCRID_LINENUM:", this.selectedDefect.QCRID_LINENUM)
+        this._defectService.getDefect(this.selectedDefect.QCRID_LINENUM).pipe(
+            map(() => {
+              // Get the note
+              // this.$ = this._notesService.note$;
+            })).subscribe();
     }
 
    

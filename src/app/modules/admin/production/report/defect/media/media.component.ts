@@ -1,4 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { DefectsService } from 'app/modules/admin/defects/defects.service';
+import { Media } from 'app/modules/admin/defects/defects.types';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'defect-media',
@@ -8,9 +11,14 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@
 })
 export class DefectMediaComponent implements OnInit {
 
-  constructor() { }
+  photos$: Observable<Media[]>
+
+  constructor(
+    private _defectService: DefectsService
+  ) { }
 
   ngOnInit() {
+    this.photos$ = this._defectService.photos$
   }
 
 }

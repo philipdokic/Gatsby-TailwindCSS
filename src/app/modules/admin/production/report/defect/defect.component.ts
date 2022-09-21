@@ -149,6 +149,7 @@ export class DefectInfoComponent implements OnInit, AfterViewInit, OnDestroy
      */
     ngAfterViewInit(): void
     {
+        this._productionReportComponent.matDrawer.open()
         // Listen for matDrawer opened change
         this._productionReportComponent.matDrawer.openedChange
             .pipe(

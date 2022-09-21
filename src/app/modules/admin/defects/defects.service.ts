@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, switchMap, take, tap } from 'rxjs';
-import { Defect, DefectDTO, DefectsList, Tag } from './defects.types';
+import { Defect, DefectDTO, DefectsList, Media, Tag } from './defects.types';
 
 @Injectable({
     providedIn: 'root'
@@ -11,6 +11,7 @@ export class DefectsService {
     private _defects: BehaviorSubject<any> = new BehaviorSubject(null);
     private _defect: BehaviorSubject<any> = new BehaviorSubject(null);
     private _tags: BehaviorSubject<Tag[] | null> = new BehaviorSubject(null);
+    private _photos: BehaviorSubject<Media[] | null> = new BehaviorSubject(null);
 
     /**
      * Constructor
@@ -34,6 +35,9 @@ export class DefectsService {
     get tags$(): Observable<any> {
         return this._tags.asObservable();
     }
+    get photos$(): Observable<any> {
+        return this._photos.asObservable();
+    }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
@@ -47,12 +51,12 @@ export class DefectsService {
         console.log("DEFECT SERVICE WORKS")
         return this._httpClient.get<DefectsList>('api/defects').pipe(
             tap((response: DefectsList) => {
-                console.log("RESPONSE", response)
+                console.log("§ DEFECTS RESPONSE", response)
                 this._defects.next(response);
             })
         );
     }
-    getDefect(id: string): Observable<DefectDTO> {
+    getDefect(id?: string): Observable<DefectDTO> {
 
         console.log("DEFECT SERVICE WORKS ID", id)
         return this._httpClient.get<DefectDTO>(`api/defects/${id}`).pipe(
@@ -64,6 +68,14 @@ export class DefectsService {
     }
 
 
+    getPhotos(): Observable<Media[]> {
+        return this._httpClient.get<Media[]>('api/defects/media').pipe(
+            tap((response: any) => {
+                console.log("-------------- PHOTOS", response)
+                this._photos.next(response);
+            })
+        );
+    }
     getTags(): Observable<Tag[]> {
         console.log("-------------- DEFECT SERVICE | GET TAGS")
         return this._httpClient.get<Tag[]>('api/defects/tags').pipe(

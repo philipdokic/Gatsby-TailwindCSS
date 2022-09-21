@@ -38,7 +38,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import moment from 'moment';
 import { DefectDetailsComponent } from './report/defect/details/details.component';
 import { DefectDataComponent } from './report/defect/data/data.component';
-import { DefectMediaComponent } from './report/media/media.component';
+import { DefectMediaComponent } from './report/defect/media/media.component';
 
 @NgModule({
   imports: [

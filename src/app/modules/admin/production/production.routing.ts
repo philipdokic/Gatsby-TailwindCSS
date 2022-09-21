@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 import { ProductionComponent } from './production.component';
-import { DefectsTagsResolver, DocsResolver, ProductionResolver } from './production.resolvers';
+import { DefectPhotosResolver, DefectResolver, DefectsResolver, DefectTagsResolver, DocsResolver, ProductionResolver } from './production.resolvers';
 
 export const productionRoutes: Route[] = [
     {
@@ -9,7 +9,10 @@ export const productionRoutes: Route[] = [
         resolve  : {
             data: ProductionResolver,
             docs: DocsResolver,
-            tags: DefectsTagsResolver
+            tags: DefectTagsResolver,
+            photos: DefectPhotosResolver,
+            defects: DefectsResolver,
+            defect: DefectResolver,
         }
     }
 ];

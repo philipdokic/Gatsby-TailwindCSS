@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DefectsService } from '../defects/defects.service';
-import { Tag } from '../defects/defects.types';
+import { Media, Tag } from '../defects/defects.types';
 import { ProductionService } from './production.service';
 
 @Injectable({
@@ -49,7 +49,7 @@ export class ProductionResolver implements Resolve<any>
 @Injectable({
     providedIn: 'root'
 })
-export class DefectsTagsResolver implements Resolve<any>
+export class DefectTagsResolver implements Resolve<any>
 {
     /**
      * Constructor
@@ -58,19 +58,64 @@ export class DefectsTagsResolver implements Resolve<any>
     {
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Resolver
-     *
-     * @param route
-     * @param state
-     */
+   
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Tag[]>
     {
         return this._defectsService.getTags();
+    }
+}
+@Injectable({
+    providedIn: 'root'
+})
+export class DefectPhotosResolver implements Resolve<any>
+{
+    /**
+     * Constructor
+     */
+    constructor(private _defectsService: DefectsService)
+    {
+    }
+
+   
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Media[]>
+    {
+        return this._defectsService.getPhotos();
+    }
+}
+@Injectable({
+    providedIn: 'root'
+})
+export class DefectsResolver implements Resolve<any>
+{
+    /**
+     * Constructor
+     */
+    constructor(private _defectsService: DefectsService)
+    {
+    }
+
+   
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>
+    {
+        return this._defectsService.getDefects();
+    }
+}
+@Injectable({
+    providedIn: 'root'
+})
+export class DefectResolver implements Resolve<any>
+{
+    /**
+     * Constructor
+     */
+    constructor(private _defectsService: DefectsService)
+    {
+    }
+
+   
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>
+    {
+        return this._defectsService.getDefect();
     }
 }
 

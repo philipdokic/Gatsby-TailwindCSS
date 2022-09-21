@@ -63,7 +63,14 @@ export interface Defect
     id: string,
     notes: string,
     completed: boolean,
-    order: number
+    order: number,
+    dimension: Dimention
+}
+
+export interface Dimention {
+    x: number,
+    y: number,
+    size: number
 }
 
 export interface DefectsList

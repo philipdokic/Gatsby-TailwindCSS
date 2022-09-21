@@ -51,11 +51,13 @@ export class DefectsMockApi {
         this._fuseMockApiService
             .onGet('api/defects/:id')
             .reply((request) => {
-                const { id } = request.urlParams
-                console.log("API: ID", id)
+                const {id} = request.urlParams
+                console.log("≈≈≈≈ API: DEFECTS: ID", id)
                 const defects = cloneDeep(this._defects)
                 console.log("API: DEFECTS", defects)
                 const defect = defects.find(de => de.QCRID_LINENUM === id)
+                console.log("API: DEFECT", defect)
+               
                 return [200, { defect }]
             })
 
@@ -154,5 +156,10 @@ export class DefectsMockApi {
 
 
 
+    }
+
+    priorityByLevel(level: string): number {
+        const levels = ["Level 1","Level 2", "Level 3"]
+        return levels.indexOf(level)
     }
 }

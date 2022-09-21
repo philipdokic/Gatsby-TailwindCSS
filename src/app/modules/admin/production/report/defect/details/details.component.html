@@ -7,7 +7,7 @@
             <!-- Mark as complete -->
             <ng-container *ngIf="!defectForm.get('completed').value">
                 <div class="flex items-center justify-center">
-                    <mat-icon [svgIcon]="'heroicons_outline:check-circle'"></mat-icon>
+                    <mat-icon [svgIcon]="'feather:circle'"></mat-icon>
                     <span class="ml-2 font-semibold">MARK AS RESOLVED</span>
                 </div>
             </ng-container>
@@ -16,7 +16,7 @@
             <ng-container *ngIf="defectForm.get('completed').value">
                 <div class="flex items-center justify-center">
                     <mat-icon class="text-primary" [svgIcon]="'heroicons_outline:check-circle'"></mat-icon>
-                    <span class="ml-2 font-semibold">MARK AS UNRESOLVED</span>
+                    <span class="ml-2 font-semibold text-slate-400">MARK AS UNRESOLVED</span>
                 </div>
             </ng-container>
         </button>
@@ -25,26 +25,26 @@
 
         <!-- Priority -->
         <div class="w-30">
-            <div class="flex items-center mt-1.5 px-4 leading-9 rounded-full cursor-pointer" [ngClass]="{'text-green-800 bg-green-200 dark:text-green-100 dark:bg-green-500': defect.priority === 0,
-                    'text-gray-800 bg-yellow-200 dark:text-yellow-100 dark:bg-yellow-500': defect.priority === 1,
-                    'text-red-800 bg-red-200 dark:text-red-100 dark:bg-red-500': defect.priority === 2}"
+            <div class="flex items-center mt-1.5 px-4 leading-9 rounded-full cursor-pointer" [ngClass]="{'text-green-800 bg-green-200 dark:text-green-100 dark:bg-green-500': defect['ERRORLEVEL'] === 'Level 1',
+                    'text-gray-800 bg-yellow-200 dark:text-yellow-100 dark:bg-yellow-500': defect['ERRORLEVEL'] === 'Level 2',
+                    'text-red-800 bg-red-200 dark:text-red-100 dark:bg-red-500': defect['ERRORLEVEL'] === 'Level 3'}"
                 [matMenuTriggerFor]="priorityMenu">
 
                 <!-- Level 1 -->
-                <ng-container *ngIf="defect.priority === 0">
+                <ng-container *ngIf="defect['ERRORLEVEL'] === 'Level 1'">
                     <mat-icon class="icon-size-5 text-current" [svgIcon]="'heroicons_solid:arrow-narrow-down'">
                     </mat-icon>
                     <span class="ml-2 mr-1 text-md font-medium">Level 1</span>
                 </ng-container>
 
                 <!-- Level 2 -->
-                <ng-container *ngIf="defect.priority === 1">
+                <ng-container *ngIf="defect['ERRORLEVEL'] === 'Level 2'">
                     <mat-icon class="icon-size-4 text-current" [svgIcon]="'heroicons_solid:minus'"></mat-icon>
                     <span class="ml-2 mr-1 text-md font-medium">Lvel 2</span>
                 </ng-container>
 
                 <!-- Level 3 -->
-                <ng-container *ngIf="defect.priority === 2">
+                <ng-container *ngIf="defect['ERRORLEVEL'] === 'Level 3'">
                     <mat-icon class="icon-size-4 text-current" [svgIcon]="'heroicons_solid:arrow-narrow-up'">
                     </mat-icon>
                     <span class="ml-2 mr-1 text-md font-medium">Level 3</span>
@@ -86,7 +86,7 @@
 
         <!-- Tags -->
         <div class="">
-            <div class="font-medium mb-1.5">Tags</div>
+            <div class="font-medium mb-1.5">Status</div>
             <div class="flex flex-wrap items-center -m-1.5">
                 <!-- Tags -->
                 <ng-container *ngIf="defect.tags.length">

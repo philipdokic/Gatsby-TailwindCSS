@@ -99,10 +99,11 @@ export class DefectDetailsComponent implements OnInit, AfterViewInit, OnDestroy
 
         // Get the defect
         this._defectService.defect$
-            .pipe(takeUntil(this._unsubscribeAll))
+            // .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(({defect}: DefectDTO) => {
 
-                console.log("GET DEFECT", defect)
+                console.log("⇧ DETAILS: GET DEFECT ERROR LEVEL", defect.ERRORLEVEL)
+                console.log("⇧ DETAILS: GET DEFECT ID", defect.QCRID_LINENUM)
 
                 // Get the defect
                 this.defect = defect;
