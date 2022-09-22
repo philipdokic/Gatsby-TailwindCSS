@@ -2,11 +2,11 @@
 import * as moment from 'moment';
 
 export const analytics = {
-    visitors           : {
+    visitors: {
         series: {
             'this-year': [
                 {
-                    name: 'Visitors',
+                    name: 'Production',
                     data: [
                         {
                             x: moment().subtract(12, 'months').day(1).toDate(),
@@ -980,7 +980,7 @@ export const analytics = {
             ]
         }
     },
-    conversions        : {
+    conversions: {
         amount: 4123,
         labels: [
             moment().subtract(47, 'days').format('DD MMM') + ' - ' + moment().subtract(40, 'days').format('DD MMM'),
@@ -997,7 +997,7 @@ export const analytics = {
             }
         ]
     },
-    impressions        : {
+    impressions: {
         amount: 46085,
         labels: [
             moment().subtract(31, 'days').format('DD MMM') + ' - ' + moment().subtract(24, 'days').format('DD MMM'),
@@ -1012,7 +1012,7 @@ export const analytics = {
             }
         ]
     },
-    visits             : {
+    visits: {
         amount: 62083,
         labels: [
             moment().subtract(31, 'days').format('DD MMM') + ' - ' + moment().subtract(24, 'days').format('DD MMM'),
@@ -1028,10 +1028,10 @@ export const analytics = {
         ]
     },
     visitorsVsPageViews: {
-        overallScore  : 472,
-        averageRatio  : 45,
+        overallScore: 472,
+        averageRatio: 45,
         predictedRatio: 55,
-        series        : [
+        series: [
             {
                 name: 'Page Views',
                 data: [
@@ -1564,36 +1564,46 @@ export const analytics = {
             }
         ]
     },
-    newVsReturning     : {
+    newVsReturning: {
         uniqueVisitors: 46085,
-        series        : [80, 20],
-        labels        : [
+        series: [80, 20],
+        labels: [
             'New',
-            'Returning'
+            'Fixed'
         ]
     },
-    gender             : {
+    gender: {
         uniqueVisitors: 46085,
-        series        : [55, 45],
-        labels        : [
-            'Male',
-            'Female'
+        series: [55, 45],
+        labels: [
+            'New',
+            'Fixed'
         ]
     },
-    age                : {
+    age: {
         uniqueVisitors: 46085,
-        series        : [35, 65],
-        labels        : [
-            'Under 30',
-            'Over 30'
+        series: [35, 65],
+        labels: [
+            'New',
+            'Fixed'
         ]
     },
-    language           : {
+    language: {
         uniqueVisitors: 46085,
-        series        : [25, 75],
-        labels        : [
-            'English',
-            'Other'
+        series: [25, 75],
+        labels: [
+            'New',
+            'Fixed'
         ]
+    },
+    top10errors: {
+        series:  [{
+            name: 'External',
+            data: [3.6, 0.1, 2.2, 1.9, 0, 1.6, 1.6, 1.6, 1, 3.9]
+        }, {
+            name: 'Internal',
+            data: [0, 2.6, 0.300, 0.400, 2.100, .400, .050, .040, .150, .020]
+        }
+    ]
     }
 };
