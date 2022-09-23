@@ -658,7 +658,7 @@ export class AnalyticsComponent implements OnInit, OnDestroy {
                     }
                 },
             },
-            colors: ['#818CF8', '#DEDEDE'],
+            colors: ['#818CF8', '#499A81'],
             fill: {
                 colors: ['#312E81'],
                 opacity: 1
@@ -721,7 +721,7 @@ export class AnalyticsComponent implements OnInit, OnDestroy {
             },
             grid: {
                 position: 'back',
-                borderColor: '#334155',
+                borderColor: '#ACB0AF',
                 padding: {
                     top: 10,
                     bottom: -40,
